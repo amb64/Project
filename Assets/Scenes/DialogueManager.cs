@@ -131,7 +131,7 @@ public class DialogueManager : MonoBehaviour
         sentenceText.text = "";
 
         fin = true;
-        Debug.Log("Fin trueeee i think - " + fin);
+        //Debug.Log("Fin trueeee i think - " + fin);
     }
     
 }
