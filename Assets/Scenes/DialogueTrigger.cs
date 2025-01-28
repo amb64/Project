@@ -8,9 +8,19 @@ public class DialogueTrigger : MonoBehaviour
     
     public Dialogue dialogue;
 
+    public bool isChat = false;
+
     public void TriggerDialogue()
     {
-        // Trigger the dialogue on the dialogue manager
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+        if (isChat)
+        {
+            FindObjectOfType<DialogueManager>().StartChat(dialogue);
+        }
+        else
+        {
+            // Trigger the dialogue on the dialogue manager
+            FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+        }
+
     }
 }

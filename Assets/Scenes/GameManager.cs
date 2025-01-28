@@ -11,7 +11,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     private int day = 1;
-    private int timeslot = 0;
+    private int timeslot = -1;
 
     // Free time variables
     public bool isFreeTime = false;
@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
         // But only if it isnt already free time
         if(manager.fin && !isFreeTime)
         {
-            timeslot += 1;
+            //timeslot += 1;
             //Debug.Log("Next timeslot. Current index :" + timeslot);
 
             // Free time timeslot
@@ -130,6 +130,8 @@ public class GameManager : MonoBehaviour
 
     void NextEvent()
     {
+        timeslot += 1;
+
         // Get the next event trigger and trigger it
         try
         {
@@ -232,6 +234,15 @@ public class GameManager : MonoBehaviour
 
         // Free time is over, start the next event
         isFreeTime = false;
+        StartCoroutine(Delay());
+        //NextEvent();
+    }
+
+    IEnumerator Delay()
+    {
+        // Wait for the animation to finish
+        yield return new WaitForSeconds(2.0f);
+
         NextEvent();
     }
 

@@ -955,6 +955,9 @@ MonoBehaviour:
   sentenceText3: {fileID: 1718518615}
   nameText4: {fileID: 1843123508}
   sentenceText4: {fileID: 242248004}
+  cover1: {fileID: 1394894749}
+  cover2: {fileID: 1348638747}
+  cover3: {fileID: 1308380558}
 --- !u!1 &234526393
 GameObject:
   m_ObjectHideFlags: 0
@@ -1771,7 +1774,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &291427151
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2327,7 +2330,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1b2408f6e56e56f47869a7c2460776b6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 45e45a3d2e88ee24f9abcdc3ec805144, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2345,6 +2348,69 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 453946240}
   m_CullTransparentMesh: 1
+--- !u!1 &480396873
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 480396874}
+  - component: {fileID: 480396875}
+  m_Layer: 0
+  m_Name: Day1-Evening
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &480396874
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480396873}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1716225241}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &480396875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480396873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a718434ad73bcc54aacd45cca946e26e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name:
+    - Ame
+    - Evil Ame
+    - Ame
+    - Evil Ame
+    - Ame
+    - Ame
+    - Ame
+    sentences:
+    - ayo this ame on discord wassupppp
+    - girl do your work you procrastinator
+    - but i dont want to.
+    - LOOOOOOSERRR
+    - anyway idfk what else to say um um
+    - 'burger? tasty? i ate 3 bananas today '
+    - i hope the chat function works!!
+    code: 04000000000000000000000000000000000000000000000000000000
+  isChat: 1
 --- !u!1 &501501461
 GameObject:
   m_ObjectHideFlags: 0
@@ -2767,7 +2833,6 @@ MonoBehaviour:
     - EVIL Ame
     - EVIL Ame
     - EVIL Ame
-    code: 000000000000000000000000000000000000000000000000
     sentences:
     - Hi there! This is some test dialogue.
     - I'm depressed... can you fix me?
@@ -2775,6 +2840,8 @@ MonoBehaviour:
     - I'm EVIL Ame... big difference.
     - Big. Big. Difference.
     - Very important.
+    code: 000000000000000000000000000000000000000000000000
+  isChat: 0
 --- !u!1 &551149955
 GameObject:
   m_ObjectHideFlags: 0
@@ -3065,7 +3132,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &618955384
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3085,6 +3152,9 @@ RectTransform:
   - {fileID: 1246277589}
   - {fileID: 1486415536}
   - {fileID: 576781649}
+  - {fileID: 1394894750}
+  - {fileID: 1348638748}
+  - {fileID: 1308380559}
   m_Father: {fileID: 599027608}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -4461,7 +4531,6 @@ MonoBehaviour:
     - EVIL Ame
     - EVIL Ame
     - EVIL Ame
-    code: 030000000000000000000000000000000000000000000000
     sentences:
     - "Wow! This is the computer.\t"
     - I love my computer
@@ -4470,6 +4539,8 @@ MonoBehaviour:
     - Work not genshin.
     - The joke is that I'm evil so I dont want you to play games I want you to do
       work but you don't wnat to do work so its evil.
+    code: 030000000000000000000000000000000000000000000000
+  isChat: 0
 --- !u!1 &1004850905
 GameObject:
   m_ObjectHideFlags: 0
@@ -4524,6 +4595,7 @@ MonoBehaviour:
   events:
   - {fileID: 543948648}
   - {fileID: 971686063}
+  - {fileID: 480396873}
   roomScreen: {fileID: 291427150}
   computerScreen: {fileID: 864459962}
   chatScreen: {fileID: 618955383}
@@ -5127,6 +5199,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1255052867}
   m_CullTransparentMesh: 1
+--- !u!1 &1308380558
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1308380559}
+  - component: {fileID: 1308380561}
+  - component: {fileID: 1308380560}
+  m_Layer: 5
+  m_Name: Cover3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1308380559
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308380558}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 618955384}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 204.29, y: -56.212}
+  m_SizeDelta: {x: 1350.6, y: 151.2125}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1308380560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308380558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.7411765, g: 0.72156864, b: 0.8078432, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1308380561
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308380558}
+  m_CullTransparentMesh: 1
 --- !u!1 &1322856732
 GameObject:
   m_ObjectHideFlags: 0
@@ -5296,6 +5443,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1324485963}
   m_CullTransparentMesh: 1
+--- !u!1 &1348638747
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1348638748}
+  - component: {fileID: 1348638750}
+  - component: {fileID: 1348638749}
+  m_Layer: 5
+  m_Name: Cover2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1348638748
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348638747}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 618955384}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 204.29, y: 95}
+  m_SizeDelta: {x: 1350.6, y: 151.2125}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1348638749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348638747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.7411765, g: 0.72156864, b: 0.8078432, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1348638750
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348638747}
+  m_CullTransparentMesh: 1
 --- !u!1 &1362487926
 GameObject:
   m_ObjectHideFlags: 0
@@ -5364,6 +5586,81 @@ Transform:
   - {fileID: 1716225241}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1394894749
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1394894750}
+  - component: {fileID: 1394894752}
+  - component: {fileID: 1394894751}
+  m_Layer: 5
+  m_Name: Cover1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1394894750
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394894749}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 618955384}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 204.29297, y: 253.39}
+  m_SizeDelta: {x: 1350.5859, y: 151.2125}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1394894751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394894749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.7411765, g: 0.72156864, b: 0.8078432, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1394894752
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394894749}
+  m_CullTransparentMesh: 1
 --- !u!1 &1413214967
 GameObject:
   m_ObjectHideFlags: 0
@@ -5888,7 +6185,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1479540462
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6626,6 +6923,7 @@ Transform:
   m_Children:
   - {fileID: 543948649}
   - {fileID: 971686064}
+  - {fileID: 480396874}
   m_Father: {fileID: 1372949393}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1717641473
@@ -6712,7 +7010,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 169646972}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
-        m_MethodName: DisplayNextSentence
+        m_MethodName: DisplayNextMessage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

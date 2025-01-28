@@ -34,6 +34,12 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI nameText4;
     public TextMeshProUGUI sentenceText4;
 
+    // Uncover previous chat boxes
+    // Again remember cover 1 is at the top
+    public GameObject cover1;
+    public GameObject cover2;
+    public GameObject cover3;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -87,6 +93,16 @@ public class DialogueManager : MonoBehaviour
 
         // Reset for the Game Manager event flow
         fin = false;
+        
+        // Reset old chatboxes
+        nameText1.text = null;
+        sentenceText1.text = null;
+        nameText2.text = null;
+        sentenceText2.text = null;
+        nameText3.text = null;
+        sentenceText3.text = null;
+        nameText4.text = null;
+        sentenceText4.text = null;
 
         // Clear the old queue
         sentences.Clear();
@@ -100,10 +116,10 @@ public class DialogueManager : MonoBehaviour
         }*/
 
         // Open box animation
-        animator.SetBool("isOpen", true);
+        //animator.SetBool("isOpen", true);
 
         // Set the speaker's name for the bottom box
-        nameText4.text = dialogue.name[0];
+        //nameText4.text = dialogue.name[0];
 
         // Add each sentence to the queue
         foreach (string sentence in dialogue.sentences)
@@ -111,10 +127,87 @@ public class DialogueManager : MonoBehaviour
             sentences.Enqueue(sentence);
         }
 
-        // MOVE THE DIALOGUES UP HERE
-
         // Delay for 1 second for the animation to play
-        StartCoroutine(StartDelay());
+        DisplayNextMessage();
+    }
+
+    public void DisplayNextMessage()
+    {
+        // End dialogue if no more sentences
+        if (sentences.Count == 0)
+        {
+            Debug.Log("the convo is OVER.");
+            //EndDialogue();
+            return;
+        }
+
+        // Move the previous chats up
+        nameText1.text = nameText2.text;
+        sentenceText1.text = sentenceText2.text;
+
+        nameText2.text = nameText3.text;
+        sentenceText2.text = sentenceText3.text;
+
+        nameText3.text = nameText4.text;
+        sentenceText3.text = sentenceText4.text;
+
+        // Set the speaker's name
+        nameText4.text = dialogue.name[line];
+
+        // Get the code
+        code = dialogue.code[line];
+
+        // Remove the current sentence from the queue and store it
+        string sentence = sentences.Dequeue();
+        line += 1;
+
+        // Set the sentence text
+        //sentenceText.text = sentence;
+
+        UncoverBoxes();
+
+        // Stop previous typing
+        StopAllCoroutines();
+
+        // Type letters one by one
+        StartCoroutine(TypeChatSentence(sentence));
+
+    }
+
+    void UncoverBoxes()
+    {
+        /*if (nameText3.text != null)
+        {
+            cover3.SetActive(false);
+
+            if(nameText2.text != null)
+            {
+                cover2.SetActive(false);
+
+                if(nameText1.text != null)
+                {
+                    cover1.SetActive(false);
+                }
+            }
+        }*/
+
+        if (nameText1.text != null)
+        {
+            cover1.SetActive(false);
+        }
+
+
+        if (nameText2.text != null)
+        {
+            cover2.SetActive(false);
+        }
+
+
+        if (nameText3.text != null)
+        {
+            cover3.SetActive(false);
+        }
+
     }
 
     public void DisplayNextSentence()
@@ -127,7 +220,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         // Set the speaker's name
-        nameText4.text = dialogue.name[line];
+        nameText.text = dialogue.name[line];
 
         // Get the code
         code = dialogue.code[line];
@@ -143,7 +236,7 @@ public class DialogueManager : MonoBehaviour
         StopAllCoroutines();
 
         // Type letters one by one
-        StartCoroutine(TypeChatSentence(sentence));
+        StartCoroutine(TypeSentence(sentence));
 
     }
 
@@ -168,7 +261,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-        IEnumerator TypeChatSentence(string sentence)
+    IEnumerator TypeChatSentence(string sentence)
     {
         sentenceText4.text = "";
         

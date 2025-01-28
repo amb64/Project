@@ -10,8 +10,9 @@ public class Dialogue
 
     // Code for event that should happen on this dialogue
     // E.g, change sprite, change screen
-    public int[] code;
 
     [TextArea(3,10)]
     public string[] sentences;
+
+    public int[] code;
 }
