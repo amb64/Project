@@ -23,6 +23,17 @@ public class DialogueManager : MonoBehaviour
 
     public int code = 0;
 
+    // For chat dialogues
+    // Remember 1 is at the top of the screen
+    public TextMeshProUGUI nameText1;
+    public TextMeshProUGUI sentenceText1;
+    public TextMeshProUGUI nameText2;
+    public TextMeshProUGUI sentenceText2;
+    public TextMeshProUGUI nameText3;
+    public TextMeshProUGUI sentenceText3;
+    public TextMeshProUGUI nameText4;
+    public TextMeshProUGUI sentenceText4;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -69,6 +80,43 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(StartDelay());
     }
 
+    public void StartChat(Dialogue d)
+    {
+        // Set global variable
+        dialogue = d;
+
+        // Reset for the Game Manager event flow
+        fin = false;
+
+        // Clear the old queue
+        sentences.Clear();
+        line = 0;
+
+        Debug.Log("Starting conversation with " + dialogue.name[line]);
+
+        /*foreach (string sentence in dialogue.sentences)
+        {
+            Debug.Log(sentence);
+        }*/
+
+        // Open box animation
+        animator.SetBool("isOpen", true);
+
+        // Set the speaker's name for the bottom box
+        nameText4.text = dialogue.name[0];
+
+        // Add each sentence to the queue
+        foreach (string sentence in dialogue.sentences)
+        {
+            sentences.Enqueue(sentence);
+        }
+
+        // MOVE THE DIALOGUES UP HERE
+
+        // Delay for 1 second for the animation to play
+        StartCoroutine(StartDelay());
+    }
+
     public void DisplayNextSentence()
     {
         // End dialogue if no more sentences
@@ -79,7 +127,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         // Set the speaker's name
-        nameText.text = dialogue.name[line];
+        nameText4.text = dialogue.name[line];
 
         // Get the code
         code = dialogue.code[line];
@@ -95,7 +143,7 @@ public class DialogueManager : MonoBehaviour
         StopAllCoroutines();
 
         // Type letters one by one
-        StartCoroutine(TypeSentence(sentence));
+        StartCoroutine(TypeChatSentence(sentence));
 
     }
 
@@ -116,6 +164,18 @@ public class DialogueManager : MonoBehaviour
         foreach (char c in sentence.ToCharArray())
         {
             sentenceText.text += c;
+            yield return null;
+        }
+    }
+
+        IEnumerator TypeChatSentence(string sentence)
+    {
+        sentenceText4.text = "";
+        
+        // Type each character one by one
+        foreach (char c in sentence.ToCharArray())
+        {
+            sentenceText4.text += c;
             yield return null;
         }
     }

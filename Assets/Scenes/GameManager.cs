@@ -48,8 +48,6 @@ public class GameManager : MonoBehaviour
     public GameObject chatScreen;    
     public GameObject current_screen;
 
-    //
-
     // Start is called before the first frame update
     void Start()
     {
