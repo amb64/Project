@@ -11,6 +11,13 @@ public class CodeAtlas : MonoBehaviour
     2 = Swap to room screen.
     3 = Swap to computer screen.
     4 = Swap to chat screen.
+    5 = Do not erase previous chat.
+    6 = Enable full body sprite.
+    7 - Disable full body sprite.
+    8 = Enable close up sprite.
+    9 - Disable close up sprite.
+    10 - Start free time.
+    11 - Stop skipping free time.
 
 
     */

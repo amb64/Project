@@ -11,10 +11,11 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     private int day = 1;
-    private int timeslot = -1;
+    private int timeslot = 0;
 
     // Free time variables
     public bool isFreeTime = false;
+    private bool canProgress = false;
     public List<Button> activityButtons = new List<Button>();
     private string selectedActivity;
     public GameObject popupWindow;
@@ -47,6 +48,10 @@ public class GameManager : MonoBehaviour
     public GameObject computerScreen;
     public GameObject chatScreen;    
     public GameObject current_screen;
+    
+    //Sprite variables
+    public GameObject fullBody;
+    public GameObject closeUp;
 
     // Start is called before the first frame update
     void Start()
@@ -64,38 +69,9 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // If the current dialogue is finished, start free time
-        // But only if it isnt already free time
-        if(manager.fin && !isFreeTime)
-        {
-            //timeslot += 1;
-            //Debug.Log("Next timeslot. Current index :" + timeslot);
-
-            // Free time timeslot
-
-            // If we currently aren't on the computer screen, move to it so we can actually have some free time
-            if(current_screen != computerScreen)
-            {
-                current_screen.SetActive(false);
-                computerScreen.SetActive(true);
-
-                current_screen = computerScreen;
-
-            }
-
-            // Set the activity buttons to be interactable
-            foreach(Button button in activityButtons)
-            {
-                button.interactable = true;
-            }
-
-            isFreeTime = true;
-
-            //NextEvent();
-        }
-
-        //Debug.Log("Dialogue ended? - " + manager.fin);
-
+        //timeslot = manager.timeslot;
+        //Debug.Log("timeslot is: " + timeslot);
+        
         switch(manager.code)
         {
             case 0:
@@ -109,6 +85,9 @@ public class GameManager : MonoBehaviour
                 current_screen.SetActive(false);
                 roomScreen.SetActive(true);
                 current_screen = roomScreen;
+
+                fullBody.SetActive(false);
+                closeUp.SetActive(false);
                 //NextEvent();
                 break;
             case 3:
@@ -116,6 +95,11 @@ public class GameManager : MonoBehaviour
                 current_screen.SetActive(false);
                 computerScreen.SetActive(true);
                 current_screen = computerScreen;
+
+                //Debug.Log("Normally swap to computer screen.");
+
+                fullBody.SetActive(false);
+                closeUp.SetActive(false);
                 //NextEvent();
                 break;
             case 4:
@@ -123,14 +107,53 @@ public class GameManager : MonoBehaviour
                 current_screen.SetActive(false);
                 chatScreen.SetActive(true);
                 current_screen = chatScreen;
+
+                fullBody.SetActive(false);
+                closeUp.SetActive(false);
                 //NextEvent();
                 break;
+            //case 5:
+                // Handled in dialogue manager not here
+                //break;
+            case 6:
+                // Toggle full body sprite
+                fullBody.SetActive(true);
+                break;
+            case 7:
+                // Toggle full body sprite
+                fullBody.SetActive(false);
+                break;
+            case 8:
+                // Toggle close up sprite
+                closeUp.SetActive(true);
+                break;
+            case 9:
+                // Toggle close up sprite
+                closeUp.SetActive(false);
+                break;
+            case 10:
+                // Free time event
+                if(manager.fin && manager.chatFin && !canProgress && !isFreeTime)
+                {
+                    //manager.code = 0;
+                    StartFreeTime();
+                }
+                return;
         }
+
+        if(manager.fin && manager.chatFin && manager.code != 10)
+        {
+            Debug.Log("Skipping free time.");
+            //StartCoroutine(Delay());
+            NextEvent();
+        }
+
+        //Debug.Log("Dialogue ended? normal - " + manager.fin + "chat - " + manager.chatFin);
     }
 
     void NextEvent()
     {
-        timeslot += 1;
+        //Debug.Log("banana style");
 
         // Get the next event trigger and trigger it
         try
@@ -139,12 +162,43 @@ public class GameManager : MonoBehaviour
             trigger = current_event.GetComponent<DialogueTrigger>();
             Debug.Log("Trigger object is: " + trigger.gameObject.name);
 
+            canProgress = false;
+            timeslot += 1;
             trigger.TriggerDialogue();
+
         }
         catch(ArgumentOutOfRangeException)
         {
-            Debug.Log("ERROR: No more events to play!");
+            Debug.Log("ERROR: No more events to play! Timeslot index: " + timeslot);
         }
+    }
+
+    void StartFreeTime()
+    {
+        // Free time timeslot
+        //manager.code = 0;
+
+        // If we currently aren't on the computer screen, move to it so we can actually have some free time
+        if(current_screen != computerScreen)
+        {
+            current_screen.SetActive(false);
+            computerScreen.SetActive(true);
+
+            current_screen = computerScreen;
+
+        }
+
+        // Set the activity buttons to be interactable
+        EnableButtons();
+
+        // Disable sprites
+        fullBody.SetActive(false);
+        closeUp.SetActive(false);
+
+        // Start free time
+        isFreeTime = true;
+
+        Debug.Log("Free time start!!! Yay!!");
 
     }
 
@@ -225,15 +279,14 @@ public class GameManager : MonoBehaviour
 
         ClampStats();
 
+        isFreeTime = false;
+        canProgress = true;
+
         // Hide the popup and set the buttons as uninteractable now
         popupWindow.SetActive(false);
-            foreach(Button button in activityButtons)
-            {
-                button.interactable = false;
-            }
+        DisableButtons();
 
         // Free time is over, start the next event
-        isFreeTime = false;
         StartCoroutine(Delay());
         //NextEvent();
     }
@@ -241,9 +294,27 @@ public class GameManager : MonoBehaviour
     IEnumerator Delay()
     {
         // Wait for the animation to finish
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(1.0f);
 
         NextEvent();
+    }
+
+    public void DisableButtons()
+    {
+        foreach(Button button in activityButtons)
+        {
+            button.interactable = false;
+            //Debug.Log("Set buttons false... " + button.interactable);
+        }
+    }
+
+    public void EnableButtons()
+    {
+        foreach(Button button in activityButtons)
+        {
+            button.interactable = true;
+            //Debug.Log("Set buttons true... " + button.interactable);
+        }
     }
 
     private void ClampStats()

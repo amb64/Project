@@ -12,14 +12,19 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI sentenceText;
 
     private Queue<string> sentences;
+    private Queue<string> messages;
 
     public Animator animator;
 
     private Dialogue dialogue;
+    private Dialogue chat;
 
     int line = 0;
+    int mess = 0;
 
     public bool fin = false;
+    public bool chatFin = true;
+    public int timeslot = 0;
 
     public int code = 0;
 
@@ -40,11 +45,15 @@ public class DialogueManager : MonoBehaviour
     public GameObject cover2;
     public GameObject cover3;
 
+    public Button chatNext;
+
+
     // Start is called before the first frame update
     void Awake()
     {
         // Create a Queue to hold dialogue in
         sentences = new Queue<string>();
+        messages = new Queue<string>();
 
         nameText.text = "";
         sentenceText.text = "";
@@ -53,6 +62,9 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue d)
     {
+        // Set chat next button as inactive so cannot be clicked through if this dialogue happens during a chat
+        chatNext.interactable = false;
+
         // Set global variable
         dialogue = d;
 
@@ -86,29 +98,65 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(StartDelay());
     }
 
+        public void DisplayNextSentence()
+    {
+        // End dialogue if no more sentences
+        if (sentences.Count == 0)
+        {
+            EndDialogue();
+            return;
+        }
+
+        // Set the speaker's name
+        nameText.text = dialogue.name[line];
+
+        // Get the code
+        code = dialogue.code[line];
+
+        // Remove the current sentence from the queue and store it
+        string sentence = sentences.Dequeue();
+        line += 1;
+
+        // Set the sentence text
+        //sentenceText.text = sentence;
+
+        // Stop previous typing
+        StopAllCoroutines();
+
+        // Type letters one by one
+        StartCoroutine(TypeSentence(sentence));
+
+    }
+
     public void StartChat(Dialogue d)
     {
         // Set global variable
-        dialogue = d;
+        chat = d;
 
         // Reset for the Game Manager event flow
-        fin = false;
+        chatFin = false;
+
+        // Only if the code isn't 5, as 5 means dont reset previous chat!
+        if (chat.code[0] != 5)
+        {
+            Debug.Log("Resetting chats... code - " + code + " last dialogue: " + sentenceText4.text);
+
+            // Reset old chatboxes
+            nameText1.text = null;
+            sentenceText1.text = null;
+            nameText2.text = null;
+            sentenceText2.text = null;
+            nameText3.text = null;
+            sentenceText3.text = null;
+            nameText4.text = null;
+            sentenceText4.text = null;
+        }
         
-        // Reset old chatboxes
-        nameText1.text = null;
-        sentenceText1.text = null;
-        nameText2.text = null;
-        sentenceText2.text = null;
-        nameText3.text = null;
-        sentenceText3.text = null;
-        nameText4.text = null;
-        sentenceText4.text = null;
-
         // Clear the old queue
-        sentences.Clear();
-        line = 0;
+        messages.Clear();
+        mess = 0;
 
-        Debug.Log("Starting conversation with " + dialogue.name[line]);
+        Debug.Log("Starting conversation with " + chat.name[mess]);
 
         /*foreach (string sentence in dialogue.sentences)
         {
@@ -122,9 +170,9 @@ public class DialogueManager : MonoBehaviour
         //nameText4.text = dialogue.name[0];
 
         // Add each sentence to the queue
-        foreach (string sentence in dialogue.sentences)
+        foreach (string sentence in chat.sentences)
         {
-            sentences.Enqueue(sentence);
+            messages.Enqueue(sentence);
         }
 
         // Delay for 1 second for the animation to play
@@ -134,10 +182,10 @@ public class DialogueManager : MonoBehaviour
     public void DisplayNextMessage()
     {
         // End dialogue if no more sentences
-        if (sentences.Count == 0)
+        if (messages.Count == 0)
         {
             Debug.Log("the convo is OVER.");
-            //EndDialogue();
+            EndChat();
             return;
         }
 
@@ -152,14 +200,14 @@ public class DialogueManager : MonoBehaviour
         sentenceText3.text = sentenceText4.text;
 
         // Set the speaker's name
-        nameText4.text = dialogue.name[line];
+        nameText4.text = chat.name[mess];
 
         // Get the code
-        code = dialogue.code[line];
+        code = chat.code[mess];
 
         // Remove the current sentence from the queue and store it
-        string sentence = sentences.Dequeue();
-        line += 1;
+        string sentence = messages.Dequeue();
+        mess += 1;
 
         // Set the sentence text
         //sentenceText.text = sentence;
@@ -210,36 +258,6 @@ public class DialogueManager : MonoBehaviour
 
     }
 
-    public void DisplayNextSentence()
-    {
-        // End dialogue if no more sentences
-        if (sentences.Count == 0)
-        {
-            EndDialogue();
-            return;
-        }
-
-        // Set the speaker's name
-        nameText.text = dialogue.name[line];
-
-        // Get the code
-        code = dialogue.code[line];
-
-        // Remove the current sentence from the queue and store it
-        string sentence = sentences.Dequeue();
-        line += 1;
-
-        // Set the sentence text
-        //sentenceText.text = sentence;
-
-        // Stop previous typing
-        StopAllCoroutines();
-
-        // Type letters one by one
-        StartCoroutine(TypeSentence(sentence));
-
-    }
-
     IEnumerator StartDelay()
     {
         // Wait for the animation to finish
@@ -275,6 +293,9 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
+        // Reset chat next button.
+        chatNext.interactable = true;
+
         Debug.Log("End of conversation.");
 
         // Close box animation
@@ -284,6 +305,19 @@ public class DialogueManager : MonoBehaviour
         sentenceText.text = "";
 
         fin = true;
+        timeslot ++;
+        //Debug.Log("Fin trueeee i think - " + fin);
+    }
+
+    void EndChat()
+    {
+        Debug.Log("End of conversation.");
+
+        // Close box animation
+        //animator.SetBool("isOpen", false);
+
+        chatFin = true;
+        timeslot ++;
         //Debug.Log("Fin trueeee i think - " + fin);
     }
     
