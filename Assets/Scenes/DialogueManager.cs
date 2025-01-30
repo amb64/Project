@@ -137,7 +137,8 @@ public class DialogueManager : MonoBehaviour
         chatFin = false;
 
         // Only if the code isn't 5, as 5 means dont reset previous chat!
-        if (chat.code[0] != 5)
+        // 58 compound code as well
+        if (chat.code[0] != 5 && chat.code[0] != 58)
         {
             Debug.Log("Resetting chats... code - " + code + " last dialogue: " + sentenceText4.text);
 

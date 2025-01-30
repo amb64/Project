@@ -18,6 +18,11 @@ public class CodeAtlas : MonoBehaviour
     9 - Disable close up sprite.
     10 - Start free time.
     11 - Stop skipping free time.
+    12 - Transition to the next day.
+    
+    Compound codes:
+    58 - Do not erase previous chat, and enable close up sprite.
+    59 - Do not erase previous chat, and disable close up sprite.
 
 
     */

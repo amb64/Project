@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Numerics;
+using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -10,8 +12,11 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    // Time variables
     private int day = 1;
     private int timeslot = 0;
+    public List<TextMeshProUGUI> timeslotText;
+    private string eventName;
 
     // Free time variables
     public bool isFreeTime = false;
@@ -19,15 +24,21 @@ public class GameManager : MonoBehaviour
     public List<Button> activityButtons = new List<Button>();
     private string selectedActivity;
     public GameObject popupWindow;
+    public GameObject errorWindow;
     public TextMeshProUGUI titleText;
     public TextMeshProUGUI descriptionText;
     public TextMeshProUGUI effectsText;
+    public TextMeshProUGUI costText;
+    private int activityCost;
+    public GameObject resultWindow;
+    public TextMeshProUGUI resultText;
+    public TextMeshProUGUI resultEffects;
 
     // Stat variables
-    private int energy;
-    private int stress;
-    private int anxiety;
-    private int depression;
+    private int energy = 50;
+    private int stress = 50;
+    private int anxiety = 50;
+    private int depression = 50;
     public Slider energySlider;
     public Slider stressSlider;
     public Slider anxietySlider;
@@ -36,12 +47,25 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI stressText;
     public TextMeshProUGUI anxietyText;
     public TextMeshProUGUI depressionText;
+    public Image energyImage;
+    public Image stressImage;
+    public Image anxietyImage;
+    public Image depressionImage;
 
     // Event system variables
     public List<GameObject> events;
     private GameObject current_event;
     private DialogueTrigger trigger;
     private DialogueManager manager;
+    public GameObject dayTransition;
+    public TextMeshProUGUI transitionText;
+    public TextMeshProUGUI statChanges;
+
+    // For showing stat changes at the end of the day
+    int startE = 50;
+    int startS = 50;
+    int startA = 50;
+    int startD = 50;
 
     // Screen variables
     public GameObject roomScreen;
@@ -139,6 +163,19 @@ public class GameManager : MonoBehaviour
                     StartFreeTime();
                 }
                 return;
+            case 12:
+                // End of this day
+                if(manager.fin && manager.chatFin)
+                {
+                    NextDay();
+                }
+                break;
+            case 58:
+                // Toggle close up sprite
+                // Rest of the functionality is in the dialogue manager
+                closeUp.SetActive(true);
+                break;
+
         }
 
         if(manager.fin && manager.chatFin && manager.code != 10)
@@ -160,10 +197,16 @@ public class GameManager : MonoBehaviour
         {
             current_event = events[timeslot];
             trigger = current_event.GetComponent<DialogueTrigger>();
-            Debug.Log("Trigger object is: " + trigger.gameObject.name);
+            eventName = trigger.gameObject.name;
+            Debug.Log("Trigger object is: " + eventName);
 
             canProgress = false;
+
+            // Increment timeslot and text
             timeslot += 1;
+
+            UpdateTimeslotText();
+
             trigger.TriggerDialogue();
 
         }
@@ -171,6 +214,14 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("ERROR: No more events to play! Timeslot index: " + timeslot);
         }
+    }
+
+    void NextDay()
+    {
+        day+= 1;
+
+        // text display for the screen and also display stat changes here
+
     }
 
     void StartFreeTime()
@@ -187,6 +238,9 @@ public class GameManager : MonoBehaviour
             current_screen = computerScreen;
 
         }
+
+        // Set the timeslot text
+        UpdateTimeslotText();
 
         // Set the activity buttons to be interactable
         EnableButtons();
@@ -220,71 +274,270 @@ public class GameManager : MonoBehaviour
         // For the description text
         // If this message shows up there was some kind of error in detecting what activity was clicked.
         string text = "Error: Unable to detect activity";
+        string eff = "Error: Unable to detect activity.";
+        string cost = "Error: Unable to detect activity";
 
         switch(selectedActivity)
         {
             case "Eat":
                 text = "Eat something to recover energy. Chance for a bonus effect on energy, stress, or depression.";
+                eff = "Energy: " + energy + " --> " + (energy + 10);
+                eff += "\n";
+                eff += "Bonus +5 to energy OR -5 to stress OR depression.";
+                cost = "Costs 0 Energy";
+                activityCost = 0;
                 break;
             case "Sleep":
                 text = "Have a nap for a while to recover energy. Chance for a bonus effect on energy, stress, anxiety, or depression.";
+                eff = "Energy: " + energy + " --> " + (energy + 15);
+                eff += "\n";
+                eff += "Bonus +5 to energy OR -5 to stress, anxiety OR depression.";
+                cost = "Costs 0 Energy";
+                activityCost = 0;
                 break;
             case "Chat":
-                text = "Chat to your friends for a bit to relieve stress. Chance for a bonus effect on depression or anxiety.";
+                text = "Chat to your friends for a bit to relieve anxiety and depression.";
+                eff = "Anxiety: " + anxiety + " --> " + (anxiety - 10);
+                eff += "\n";
+                eff += "Depression: " + depression + " --> " + (depression - 10);
+                cost = "Energy: " + energy + " --> " + (energy - 15);
+                activityCost = 15;
                 break;
             case "Work":
-                text = "Spend some time getting work done to relive stress. Chance for a bonus effect on depression or anxiety.";
+                text = "Spend some time getting work done to relive lots of stress. Chance for a bonus effect on depression or anxiety.";
+                eff = "Stress: " + stress + " --> " + (stress - 15);
+                eff += "\n";
+                eff += "Bonus -5 to depression OR anxiety";
+                cost = "Energy: " + energy + " --> " + (energy - 15);
+                activityCost = 15;
                 break;
             case "Game":
                 text = "Spend time playing games to relieve stress. Chance for a bonus effect on depression or anxiety.";
+                eff = "Stress: " + stress + " --> " + (stress - 10);
+                eff += "\n";
+                eff += "Bonus -5 to depression OR anxiety";
+                cost = "Energy: " + energy + " --> " + (energy - 10);
+                activityCost = 10;
                 break;
             case "SNS":
-                text = "Browse social media posts for a while to decrease either anxiety or depression.";
+                text = "Browse social media posts for a while to decrease depression. Chance for a bonus effect on stress or anxiety.";
+                eff = "Depression: " + depression + " --> " + (depression - 10);
+                eff += "\n";
+                eff += "Bonus -5 to stress OR anxiety";
+                cost = "Energy: " + energy + " --> " + (energy - 10);
+                activityCost = 10;
                 break;
             case "Video":
-                text = "Watch some videos online to decrease stress and either anxiety or depression.";
+                text = "Watch some videos online to decrease anxiety. Chance for a bonus effect on stress or depression.";
+                eff = "Anxiety: " + anxiety + " --> " + (anxiety - 10);
+                eff += "\n";
+                eff += "Bonus -5 to stress OR depression";
+                cost = "Energy: " + energy + " --> " + (energy - 10);
+                activityCost = 10;
                 break;
             case "Music":
-                text = "Listen to some music for a while to decrease anxiety and depression.";
+                text = "Listen to some music for a while to decrease anxiety and depression a bit.";
+                eff = "Anxiety: " + anxiety + " --> " + (anxiety - 5);
+                eff += "\n";
+                eff += "Depression: " + depression + " --> " + (depression - 5);
+                cost = "Energy: " + energy + " --> " + (energy - 5);
+                activityCost = 5;
                 break;
         }
 
         descriptionText.text = text;
+        effectsText.text = eff;
+        costText.text = cost;
 
         //Debug.Log("Button name: " + buttonName);
     }
 
     public void SpendTime()
     {
+        // If the player can't afford to do the activity, show an error.
+        if(energy < activityCost)
+        {
+            popupWindow.SetActive(false);
+            errorWindow.SetActive(true);
+            return;
+        }
+
+        // Store current stats to use in the result display
+        int oldEnergy = energy;
+        int oldStress = stress;
+        int oldAnxiety = anxiety;
+        int oldDepression = depression;
+        string text = "";
+        string desc = "";
+
+        // Subtract the cost of this activity
+        energy -= activityCost;
+
+        // Random number for the bonus effects
+        int random1 = UnityEngine.Random.Range(0,3);
+        int random2 = UnityEngine.Random.Range(0,2);
+        int random3 = UnityEngine.Random.Range(0,1);
+
         switch(selectedActivity)
         {
             case "Eat":
-                energy += 20;
+                energy += 10;
+                desc = "You eat a meal to recover your energy.";
+                switch(random2)
+                {
+                    case 0:
+                        energy += 5;
+                        desc += "It's particularly tasty, making you feel more energised than usual.";
+                        break;
+
+                    case 1:
+                        stress -= 5;
+                        desc+= "You feel calm as you eat, relieving some of your stress.";
+                        break;
+
+                    case 2:
+                        depression -= 5;
+                        desc+= "It takes your mind off of things a little, relieving some of your depressive thoughts.";
+                        break;
+                }
                 break;
             case "Sleep":
+                energy+= 15;
+                desc = "You take a nap to recover your energy.";
+                switch(random1)
+                {
+                    case 0:
+                        energy += 5;
+                        desc+= "It lasts longer than usual, leaving you extra refreshed.";
+                        break;
+
+                    case 1:
+                        stress -= 5;
+                        desc+= "It calmed you down, relieving some of your stress.";
+                        break;
+
+                    case 2:
+                        anxiety -= 5;
+                        desc+= "It helped you relax, relieving a bit of your anxieties.";
+                        break;
+
+                    case 3:
+                        depression -= 5;
+                        desc+= "It made you rationalise your negative depressive thoughts, relieving some of them.";
+                        break;
+                }
                 break;
             case "Chat":
+                anxiety -= 10;
+                depression -= 10;
+                desc = "You spend some time talking to your friends. Having so much fun with them helps you forget about your troubles for a little while, relieving some of your depressive thoughts and anxieties.";
                 break;
             case "Work":
+                stress -= 15;
+                desc = "You try to focus on working on your project for a while.";
+                switch(random3)
+                {
+                    case 0:
+                        depression -= 5;
+                        desc+= "You feel accomplished for your efforts, making you feel a bit better about yourself.";
+                        break;
+
+                    case 1:
+                        anxiety -= 5;
+                        desc+= "As you check off your to-do list, you feel less anxious.";
+                        break;
+                }
                 break;
             case "Game":
+                stress -= 10;
+                desc = "You spend some time relaxing by playing one of your favourite video games.";
+                switch(random3)
+                {
+                    case 0:
+                        depression -= 5;
+                        desc+= "The game is particularly calming, relieving some of your depressive thoughts.";
+                        break;
+
+                    case 1:
+                        anxiety -= 5;
+                        desc+= "You feel so relaxed that you're able to forget about some of your anxieties for a little while.";
+                        break;
+                }
                 break;
             case "SNS":
+                depression -= 10;
+                desc = "You spend a while sitting in bed scrolling through social media on your phone to relieve your worries.";
+                switch(random3)
+                {
+                    case 0:
+                        stress -= 5;
+                        desc+= "The memes you saw made you laugh. You feel a bit less stressed now.";
+                        break;
+
+                    case 1:
+                        anxiety -= 5;
+                        desc+= "You saw cat photos. A lot of cat photos. They're so cute that they make you feel less anxious.";
+                        break;
+                }
                 break;
             case "Video":
+                anxiety -= 10;
+                desc = "You spend a few hours watching videos online to relax.";
+                switch(random3)
+                {
+                    case 0:
+                        depression -= 5;
+                        desc+= "It helps you keep your mind off of your worries and troubles for a while.";
+                        break;
+
+                    case 1:
+                        stress -= 5;
+                        desc+= "You spend so much time laughing that it relieves some of your sress.";
+                        break;
+                }
                 break;
             case "Music":
+                anxiety -= 5;
+                depression -= 5;
+                desc = "You listen to some of your favourite songs for a while, calming you down.";
                 break;
         }
 
+        // Clamp stats and change colours
         ClampStats();
 
-        isFreeTime = false;
-        canProgress = true;
+        // Update the result window effect text
+        if(oldEnergy != energy)
+        {
+            text += "Energy: " + oldEnergy + " --> " + energy + "\n";
+        }
+        if(oldStress != stress)
+        {
+            text += "Stress: " + oldStress + " --> " + stress + "\n";
+        }
+        if(oldAnxiety != anxiety)
+        {
+            text += "Anxiety: " + oldAnxiety + " --> " + anxiety + "\n";
+        }
+        if(oldDepression != depression)
+        {
+            text += "Depression: " + oldDepression + " --> " + depression;
+        }
+
+        resultEffects.text = text;
+        resultText.text = desc;
 
         // Hide the popup and set the buttons as uninteractable now
+        // Show the result popup
         popupWindow.SetActive(false);
+        resultWindow.SetActive(true);
         DisableButtons();
+    }
+
+    public void FinishFreeTime()
+    {
+        isFreeTime = false;
+        canProgress = true;
 
         // Free time is over, start the next event
         StartCoroutine(Delay());
@@ -294,7 +547,7 @@ public class GameManager : MonoBehaviour
     IEnumerator Delay()
     {
         // Wait for the animation to finish
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.5f);
 
         NextEvent();
     }
@@ -320,6 +573,7 @@ public class GameManager : MonoBehaviour
     private void ClampStats()
     {
         // Clamp all the stats to between 0 and 100
+        // As well as make the sliders red / white depending on their values
 
         if(energy < 0)
         {
@@ -333,6 +587,15 @@ public class GameManager : MonoBehaviour
         energySlider.value = energy;
         energyText.text = energy.ToString();
 
+        if(energy <= 25)
+        {
+            energyImage.color = new Color32(255, 149, 149, 255);
+        }
+        else
+        {
+            energyImage.color = new Color32(255, 255, 255, 255);
+        }
+
         if(stress < 0)
         {
             stress = 0;
@@ -344,6 +607,15 @@ public class GameManager : MonoBehaviour
 
         stressSlider.value = stress;
         stressText.text = stress.ToString();
+
+        if(stress >= 75)
+        {
+            stressImage.color = new Color32(255, 149, 149, 255);
+        }
+        else
+        {
+            stressImage.color = new Color32(255, 255, 255, 255);
+        }
 
         if(anxiety < 0)
         {
@@ -357,6 +629,15 @@ public class GameManager : MonoBehaviour
         anxietySlider.value = anxiety;
         anxietyText.text = anxiety.ToString();
 
+        if(anxiety >= 75)
+        {
+            anxietyImage.color = new Color32(255, 149, 149, 255);
+        }
+        else
+        {
+            anxietyImage.color = new Color32(255, 255, 255, 255);
+        }
+
         if(depression < 0)
         {
             depression = 0;
@@ -368,5 +649,22 @@ public class GameManager : MonoBehaviour
 
         depressionSlider.value = depression;
         depressionText.text = depression.ToString();
+
+        if(depression >= 75)
+        {
+            depressionImage.color = new Color32(255, 149, 149, 255);
+        }
+        else
+        {
+            depressionImage.color = new Color32(255, 255, 255, 255);
+        }
+    }
+
+    void UpdateTimeslotText()
+    {
+        foreach(TextMeshProUGUI t in timeslotText)
+        {
+            t.text = eventName;
+        }
     }
 }
