@@ -9,6 +9,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
+//using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
@@ -61,6 +62,11 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI transitionText;
     public TextMeshProUGUI statChanges;
     public TextMeshProUGUI transitionText2;
+    public GameObject timeslotPopup;
+    public TextMeshProUGUI timeslotPopupText;
+    public GameObject freeTimePopup;
+    bool popupActive = true;
+
 
     // For showing stat changes at the end of the day
     int startE = 50;
@@ -104,6 +110,16 @@ public class GameManager : MonoBehaviour
     {
         //timeslot = manager.timeslot;
         //Debug.Log("timeslot is: " + timeslot);
+
+        if(popupActive)
+        {
+            if(Input.GetMouseButtonDown(0))
+            {
+                freeTimePopup.SetActive(false);
+                timeslotPopup.SetActive(false);
+                popupActive = false;
+            }
+        }
         
         switch(manager.code)
         {
@@ -211,6 +227,8 @@ public class GameManager : MonoBehaviour
 
             canProgress = false;
 
+            PopupWindow(timeslotPopup, true);
+
             // Increment timeslot and text
             timeslot += 1;
 
@@ -223,6 +241,18 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("ERROR: No more events to play! Timeslot index: " + timeslot);
         }
+    }
+
+    void PopupWindow(GameObject window, bool needUpdate)
+    {
+        window.SetActive(true);
+        if(needUpdate)
+        {
+            timeslotPopupText.text = eventName;
+        }
+
+        popupActive = true;
+        //yield return new WaitForSeconds(2.5f);
     }
 
     void NextDay()
@@ -283,6 +313,8 @@ public class GameManager : MonoBehaviour
             current_screen = computerScreen;
 
         }
+
+        PopupWindow(freeTimePopup, false);
 
         // Set the timeslot text
         UpdateTimeslotText();
