@@ -60,6 +60,7 @@ public class GameManager : MonoBehaviour
     public GameObject dayTransition;
     public TextMeshProUGUI transitionText;
     public TextMeshProUGUI statChanges;
+    public TextMeshProUGUI transitionText2;
 
     // For showing stat changes at the end of the day
     int startE = 50;
@@ -77,12 +78,20 @@ public class GameManager : MonoBehaviour
     public GameObject fullBody;
     public GameObject closeUp;
 
+    public AudioManager audioManager;
+
     // Start is called before the first frame update
     void Start()
     {
         // Get the dialogue manager
         manager = FindObjectOfType<DialogueManager>();
 
+        // Get the audio manager
+        audioManager = FindObjectOfType<AudioManager>();
+    }
+
+    public void StartGame()
+    {
         // Current screen, same as in the code atlas. Starts at 1 signifiying the room screen.
         current_screen = roomScreen;
 
@@ -218,10 +227,46 @@ public class GameManager : MonoBehaviour
 
     void NextDay()
     {
+        // Make sure we dont start another event
+        // This may be redundant however
+        manager.code = 0;
+
+        dayTransition.SetActive(true);
+
+        transitionText.text = "Day " + day;
+
+        string text = "";
+
+        // Update the result window effect text
+        text = "Energy: " + startE + " --> " + energy + "\n";
+        text += "Stress: " + startS + " --> " + stress + "\n";
+        text += "Anxiety: " + startA + " --> " + anxiety + "\n";
+        text += "Depression: " + startD + " --> " + depression;
+        statChanges.text = text;
+
+        // Update the starting stats for tomorrow
+        startE = energy;
+        startS = stress;
+        startA = anxiety;
+        startD = depression;
+
+        // Increment the day
         day+= 1;
+    }
 
-        // text display for the screen and also display stat changes here
+    public void ChangeDayNumber()
+    {
+        // Called from the 2nd transition screen being activated
+        // Simply just changes the day number nothing else!
+        transitionText2.text = "Day " + day;
+    }
 
+    public void NextDayEvents()
+    {
+        // Called from the 2nd transition screen being disabled
+        // Simply just starts the next event in the event list
+
+        NextEvent();
     }
 
     void StartFreeTime()
@@ -300,7 +345,8 @@ public class GameManager : MonoBehaviour
                 eff = "Anxiety: " + anxiety + " --> " + (anxiety - 10);
                 eff += "\n";
                 eff += "Depression: " + depression + " --> " + (depression - 10);
-                cost = "Energy: " + energy + " --> " + (energy - 15);
+                //cost = "Energy: " + energy + " --> " + (energy - 15);
+                cost = "Costs 15 Energy";
                 activityCost = 15;
                 break;
             case "Work":
@@ -308,7 +354,8 @@ public class GameManager : MonoBehaviour
                 eff = "Stress: " + stress + " --> " + (stress - 15);
                 eff += "\n";
                 eff += "Bonus -5 to depression OR anxiety";
-                cost = "Energy: " + energy + " --> " + (energy - 15);
+                //cost = "Energy: " + energy + " --> " + (energy - 15);
+                cost = "Costs 15 Energy";
                 activityCost = 15;
                 break;
             case "Game":
@@ -316,7 +363,8 @@ public class GameManager : MonoBehaviour
                 eff = "Stress: " + stress + " --> " + (stress - 10);
                 eff += "\n";
                 eff += "Bonus -5 to depression OR anxiety";
-                cost = "Energy: " + energy + " --> " + (energy - 10);
+                //cost = "Energy: " + energy + " --> " + (energy - 10);
+                cost = "Costs 10 Energy";
                 activityCost = 10;
                 break;
             case "SNS":
@@ -324,7 +372,8 @@ public class GameManager : MonoBehaviour
                 eff = "Depression: " + depression + " --> " + (depression - 10);
                 eff += "\n";
                 eff += "Bonus -5 to stress OR anxiety";
-                cost = "Energy: " + energy + " --> " + (energy - 10);
+                //cost = "Energy: " + energy + " --> " + (energy - 10);
+                cost = "Costs 10 Energy";
                 activityCost = 10;
                 break;
             case "Video":
@@ -332,7 +381,8 @@ public class GameManager : MonoBehaviour
                 eff = "Anxiety: " + anxiety + " --> " + (anxiety - 10);
                 eff += "\n";
                 eff += "Bonus -5 to stress OR depression";
-                cost = "Energy: " + energy + " --> " + (energy - 10);
+                //cost = "Energy: " + energy + " --> " + (energy - 10);
+                cost = "Costs 10 Energy";
                 activityCost = 10;
                 break;
             case "Music":
@@ -340,7 +390,8 @@ public class GameManager : MonoBehaviour
                 eff = "Anxiety: " + anxiety + " --> " + (anxiety - 5);
                 eff += "\n";
                 eff += "Depression: " + depression + " --> " + (depression - 5);
-                cost = "Energy: " + energy + " --> " + (energy - 5);
+                //cost = "Energy: " + energy + " --> " + (energy - 5);
+                cost = "Costs 5 Energy";
                 activityCost = 5;
                 break;
         }
@@ -611,10 +662,12 @@ public class GameManager : MonoBehaviour
         if(stress >= 75)
         {
             stressImage.color = new Color32(255, 149, 149, 255);
+            audioManager.Heartbeat();
         }
         else
         {
             stressImage.color = new Color32(255, 255, 255, 255);
+            audioManager.StopHeartbeat();
         }
 
         if(anxiety < 0)
@@ -653,10 +706,12 @@ public class GameManager : MonoBehaviour
         if(depression >= 75)
         {
             depressionImage.color = new Color32(255, 149, 149, 255);
+            audioManager.Distort();
         }
         else
         {
             depressionImage.color = new Color32(255, 255, 255, 255);
+            audioManager.UnDistort();
         }
     }
 
@@ -666,5 +721,40 @@ public class GameManager : MonoBehaviour
         {
             t.text = eventName;
         }
+    }
+
+    // To be called by the dialogue manager only when an event has ended.
+    public void ChangeStats(int stat, int amount)
+    {
+        // Add / subtract the stat based on the effect amount
+
+        switch(stat)
+        {
+        case 1:
+            // Energy
+            energy += amount;
+            break;
+        case 2:
+            // Stress
+            stress += amount;
+            break;
+        case 3:
+            // Anxiety
+            anxiety += amount;
+            break;
+        case 4:
+            // Depression
+            depression += amount;
+            break;
+        }
+
+        ClampStats();
+
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("Quitting game.");
+        Application.Quit();
     }
 }

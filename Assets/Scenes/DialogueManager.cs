@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Unity.PlasticSCM.Editor.WebApi;
+using UnityEditor;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -47,10 +48,15 @@ public class DialogueManager : MonoBehaviour
 
     public Button chatNext;
 
+    GameManager manager;
+
 
     // Start is called before the first frame update
     void Awake()
     {
+        // Get the game manager
+        manager = FindObjectOfType<GameManager>();
+
         // Create a Queue to hold dialogue in
         sentences = new Queue<string>();
         messages = new Queue<string>();
@@ -305,6 +311,8 @@ public class DialogueManager : MonoBehaviour
         nameText.text = "";
         sentenceText.text = "";
 
+        manager.ChangeStats(dialogue.statToAffect, dialogue.effectAmount);
+
         fin = true;
         timeslot ++;
         //Debug.Log("Fin trueeee i think - " + fin);
@@ -313,6 +321,8 @@ public class DialogueManager : MonoBehaviour
     void EndChat()
     {
         Debug.Log("End of conversation.");
+
+        manager.ChangeStats(chat.statToAffect, chat.effectAmount);
 
         // Close box animation
         //animator.SetBool("isOpen", false);
