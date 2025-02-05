@@ -19,6 +19,8 @@ public class CodeAtlas : MonoBehaviour
     10 - Start free time.
     11 - Stop skipping free time.
     12 - Transition to the next day.
+
+    15 - Trigger the relevant ending screen.
     
     Compound codes:
     58 - Do not erase previous chat, and enable close up sprite.

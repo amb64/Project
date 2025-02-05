@@ -66,7 +66,18 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI timeslotPopupText;
     public GameObject freeTimePopup;
     bool popupActive = true;
+    public AudioManager audioManager;
 
+    // Ending variables
+    // Good ending = 1, bad ending = 2
+    int ending = 0;
+    public GameObject goodEndScreen;
+    public GameObject badEndScreen;
+    public GameObject gameScreen;
+    // These could be replaced by lists depending on the structure of the events!
+    public GameObject goodEndEvent;
+    public GameObject badEndEvent;
+    public GameObject endingTransScreen;
 
     // For showing stat changes at the end of the day
     int startE = 50;
@@ -84,7 +95,7 @@ public class GameManager : MonoBehaviour
     public GameObject fullBody;
     public GameObject closeUp;
 
-    public AudioManager audioManager;
+
 
     // Start is called before the first frame update
     void Start()
@@ -117,7 +128,13 @@ public class GameManager : MonoBehaviour
             {
                 freeTimePopup.SetActive(false);
                 timeslotPopup.SetActive(false);
+                endingTransScreen.SetActive(false);
                 popupActive = false;
+
+                if(ending != 0)
+                {
+                    manager.code = 15;
+                }
             }
         }
         
@@ -195,6 +212,33 @@ public class GameManager : MonoBehaviour
                     NextDay();
                 }
                 break;
+            case 15:
+                // Trigger the ending screen.
+                if(!popupActive)
+                {
+                    if(ending == 1)
+                    {
+                        // Good ending screen
+                        gameScreen.SetActive(false);
+                        goodEndScreen.SetActive(true);
+                    }
+                    else if(ending == 2)
+                    {
+                        // Bad ending screen
+                        gameScreen.SetActive(false);
+                        badEndScreen.SetActive(true);
+                    }
+                    else
+                    {
+                        Debug.Log("Error when triggering ending screen.");
+                    }
+                }
+                else
+                {
+                    endingTransScreen.SetActive(true);
+                    popupActive = true;
+                }
+                break;
             case 58:
                 // Toggle close up sprite
                 // Rest of the functionality is in the dialogue manager
@@ -203,7 +247,7 @@ public class GameManager : MonoBehaviour
 
         }
 
-        if(manager.fin && manager.chatFin && manager.code != 10)
+        if(manager.fin && manager.chatFin && manager.code != 10 && ending == 0)
         {
             Debug.Log("Skipping free time.");
             //StartCoroutine(Delay());
@@ -239,7 +283,8 @@ public class GameManager : MonoBehaviour
         }
         catch(ArgumentOutOfRangeException)
         {
-            Debug.Log("ERROR: No more events to play! Timeslot index: " + timeslot);
+            Debug.Log("No more events to play. Game ending now. Timeslot index: " + timeslot);
+            EndGame();
         }
     }
 
@@ -788,5 +833,52 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Quitting game.");
         Application.Quit();
+    }
+
+    void EndGame()
+    {
+        // Logic for determining which ending will go here
+        // Based on adding the stats together and whether you surpass a certain "stat value" or not
+
+        // !!!!Needs balancing, as this doesnt take into account individual stats. Please test thoroughly.!!!!
+
+        int statValue = 0;
+
+        statValue += stress;
+        statValue += anxiety;
+        statValue += depression;
+        statValue -= energy;
+
+        GameObject endType;
+
+        // Trigger the relevant ending event
+
+        // Could use a list here if there would be multiple events in the ending. Wouldn't be hard to code.
+        // Just replace the current events list with the list for the ending events here
+        // And use the regular flow that the game uses to continue calling events until it runs out
+        // Then use a code to trigger the ending screen rather than the next event.
+        if(statValue <= 97)
+        {
+            //The good ending
+            endType = goodEndEvent;
+            ending = 1;
+        }
+        else
+        {
+            //The bad ending
+            endType = badEndEvent;
+            ending = 2;
+        }
+
+        trigger = endType.GetComponent<DialogueTrigger>();
+        eventName = trigger.gameObject.name;
+        trigger.TriggerDialogue();
+        Debug.Log("Triggering ending sequence. Trigger object is: " + eventName);
+
+
+        // Trigger the end END screen that gives further information about MI and support resources
+
+        // Final screen to urge the player to return to the research questionnaire.
+
     }
 }
