@@ -13,6 +13,8 @@ public class Dialogue
     public int statToAffect;
     public int effectAmount;
 
+    public bool doesntNeedPopup;
+
     [TextArea(3,10)]
     public string[] sentences;
 

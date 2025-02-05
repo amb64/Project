@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using Unity.PlasticSCM.Editor.WebApi;
 using UnityEditor;
 
 public class DialogueManager : MonoBehaviour
@@ -26,6 +25,8 @@ public class DialogueManager : MonoBehaviour
     public bool fin = false;
     public bool chatFin = true;
     public int timeslot = 0;
+
+    public bool doesntNeedPopup = false;
 
     public int code = 0;
 
@@ -73,6 +74,16 @@ public class DialogueManager : MonoBehaviour
 
         // Set global variable
         dialogue = d;
+
+        // For the timeslot popup window
+        if(dialogue.doesntNeedPopup)
+        {
+            doesntNeedPopup = true;
+        }
+        else
+        {
+            doesntNeedPopup = false;
+        }
 
         // Reset for the Game Manager event flow
         fin = false;
@@ -138,6 +149,16 @@ public class DialogueManager : MonoBehaviour
     {
         // Set global variable
         chat = d;
+
+        // For the timeslot popup window
+        if(chat.doesntNeedPopup)
+        {
+            doesntNeedPopup = true;
+        }
+        else
+        {
+            doesntNeedPopup = false;
+        }
 
         // Reset for the Game Manager event flow
         chatFin = false;

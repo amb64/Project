@@ -78,6 +78,8 @@ public class GameManager : MonoBehaviour
     public GameObject goodEndEvent;
     public GameObject badEndEvent;
     public GameObject endingTransScreen;
+    bool end = false;
+    public TextMeshProUGUI endingText;
 
     // For showing stat changes at the end of the day
     int startE = 50;
@@ -133,7 +135,8 @@ public class GameManager : MonoBehaviour
 
                 if(ending != 0)
                 {
-                    manager.code = 15;
+                    end = true;
+                    audioManager.Button();
                 }
             }
         }
@@ -214,7 +217,7 @@ public class GameManager : MonoBehaviour
                 break;
             case 15:
                 // Trigger the ending screen.
-                if(!popupActive)
+                if(end)
                 {
                     if(ending == 1)
                     {
@@ -236,6 +239,7 @@ public class GameManager : MonoBehaviour
                 else
                 {
                     endingTransScreen.SetActive(true);
+                    endingText.text = eventName;
                     popupActive = true;
                 }
                 break;
@@ -271,14 +275,17 @@ public class GameManager : MonoBehaviour
 
             canProgress = false;
 
-            PopupWindow(timeslotPopup, true);
-
             // Increment timeslot and text
             timeslot += 1;
 
             UpdateTimeslotText();
 
             trigger.TriggerDialogue();
+
+            if(!manager.doesntNeedPopup)
+            {
+                PopupWindow(timeslotPopup, true);
+            }
 
         }
         catch(ArgumentOutOfRangeException)
