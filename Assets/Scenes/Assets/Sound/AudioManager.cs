@@ -10,8 +10,13 @@ public class AudioManager : MonoBehaviour
     public AudioSource mouse;
     public AudioSource heartbeat;
 
+    public AudioSource notif;
+
     public void StartAudio()
     {
+        bgMusic.loop = true;
+        bgMusicDistorted.loop = true;
+        
         bgMusic.Play();
 
         bgMusicDistorted.Play();
@@ -26,6 +31,11 @@ public class AudioManager : MonoBehaviour
         buttonSound.Play();
     }
 
+    public void Notif()
+    {
+        notif.Play();
+    }
+
     public void Mouse()
     {
         mouse.Play();
@@ -34,6 +44,7 @@ public class AudioManager : MonoBehaviour
     public void Heartbeat()
     {
         heartbeat.UnPause();
+        //Debug.Log("play heartbeat sound");
     }
 
     public void StopHeartbeat()

@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
     public bool isFreeTime = false;
     private bool canProgress = false;
     public List<Button> activityButtons = new List<Button>();
+    public List<Button> unproductiveActivities = new List<Button>();
+    public Button chatButton;
     private string selectedActivity;
     public GameObject popupWindow;
     public GameObject errorWindow;
@@ -78,7 +80,6 @@ public class GameManager : MonoBehaviour
     public GameObject goodEndEvent;
     public GameObject badEndEvent;
     public GameObject endingTransScreen;
-    bool end = false;
     public TextMeshProUGUI endingText;
 
     // For showing stat changes at the end of the day
@@ -96,6 +97,7 @@ public class GameManager : MonoBehaviour
     //Sprite variables
     public GameObject fullBody;
     public GameObject closeUp;
+    public GameObject stressLines;
 
 
 
@@ -124,6 +126,8 @@ public class GameManager : MonoBehaviour
         //timeslot = manager.timeslot;
         //Debug.Log("timeslot is: " + timeslot);
 
+        //Debug.Log("ending " + ending);
+
         if(popupActive)
         {
             if(Input.GetMouseButtonDown(0))
@@ -133,10 +137,22 @@ public class GameManager : MonoBehaviour
                 endingTransScreen.SetActive(false);
                 popupActive = false;
 
-                if(ending != 0)
+                switch(ending)
                 {
-                    end = true;
-                    audioManager.Button();
+                    case 0:
+                        break;
+                    case 1:
+                        // Good ending screen
+                        gameScreen.SetActive(false);
+                        goodEndScreen.SetActive(true);
+                        audioManager.Button();
+                        break;
+                    case 2:
+                        // Bad ending screen
+                        gameScreen.SetActive(false);
+                        badEndScreen.SetActive(true);
+                        audioManager.Button();
+                        break;
                 }
             }
         }
@@ -177,6 +193,8 @@ public class GameManager : MonoBehaviour
                 chatScreen.SetActive(true);
                 current_screen = chatScreen;
 
+                manager.ClearChat();
+
                 fullBody.SetActive(false);
                 closeUp.SetActive(false);
                 //NextEvent();
@@ -212,41 +230,31 @@ public class GameManager : MonoBehaviour
                 // End of this day
                 if(manager.fin && manager.chatFin)
                 {
+                    //gameScreen.SetActive(false);
                     NextDay();
                 }
                 break;
             case 15:
                 // Trigger the ending screen.
-                if(end)
+                if(manager.fin && manager.chatFin)
                 {
-                    if(ending == 1)
-                    {
-                        // Good ending screen
-                        gameScreen.SetActive(false);
-                        goodEndScreen.SetActive(true);
-                    }
-                    else if(ending == 2)
-                    {
-                        // Bad ending screen
-                        gameScreen.SetActive(false);
-                        badEndScreen.SetActive(true);
-                    }
-                    else
-                    {
-                        Debug.Log("Error when triggering ending screen.");
-                    }
-                }
-                else
-                {
+
                     endingTransScreen.SetActive(true);
-                    endingText.text = eventName;
+                    gameScreen.SetActive(false);
+                    endingText.text = "Day " + day;
                     popupActive = true;
+                    EndGame();
                 }
                 break;
             case 58:
                 // Toggle close up sprite
                 // Rest of the functionality is in the dialogue manager
                 closeUp.SetActive(true);
+                break;
+            case 59:
+                // Toggle close up sprite
+                // Rest of the functionality is in the dialogue manager
+                closeUp.SetActive(false);
                 break;
 
         }
@@ -267,11 +275,12 @@ public class GameManager : MonoBehaviour
 
         // Get the next event trigger and trigger it
         try
-        {
+        {   
+            //current_event = events[31];
             current_event = events[timeslot];
             trigger = current_event.GetComponent<DialogueTrigger>();
             eventName = trigger.gameObject.name;
-            Debug.Log("Trigger object is: " + eventName);
+            Debug.Log("Trigger object is: " + eventName + "timeslot: " + timeslot);
 
             canProgress = false;
 
@@ -290,8 +299,11 @@ public class GameManager : MonoBehaviour
         }
         catch(ArgumentOutOfRangeException)
         {
-            Debug.Log("No more events to play. Game ending now. Timeslot index: " + timeslot);
-            EndGame();
+            if(manager.fin && manager.chatFin)
+            {
+                Debug.Log("No more events to play. Game ending now. Timeslot index: " + timeslot);
+                EndGame();
+            }
         }
     }
 
@@ -348,7 +360,8 @@ public class GameManager : MonoBehaviour
         // Called from the 2nd transition screen being disabled
         // Simply just starts the next event in the event list
 
-        NextEvent();
+        //NextEvent();
+        PopupWindow(timeslotPopup, true);
     }
 
     void StartFreeTime()
@@ -517,7 +530,7 @@ public class GameManager : MonoBehaviour
         {
             case "Eat":
                 energy += 10;
-                desc = "You eat a meal to recover your energy.";
+                desc = "You eat a meal to recover your energy. ";
                 switch(random2)
                 {
                     case 0:
@@ -538,7 +551,7 @@ public class GameManager : MonoBehaviour
                 break;
             case "Sleep":
                 energy+= 15;
-                desc = "You take a nap to recover your energy.";
+                desc = "You take a nap to recover your energy. ";
                 switch(random1)
                 {
                     case 0:
@@ -565,11 +578,11 @@ public class GameManager : MonoBehaviour
             case "Chat":
                 anxiety -= 10;
                 depression -= 10;
-                desc = "You spend some time talking to your friends. Having so much fun with them helps you forget about your troubles for a little while, relieving some of your depressive thoughts and anxieties.";
+                desc = "You spend some time talking to your friends. Having so much fun with them helps you forget about your troubles for a little while, relieving some of your depressive thoughts and anxieties. ";
                 break;
             case "Work":
                 stress -= 15;
-                desc = "You try to focus on working on your project for a while.";
+                desc = "You try to focus on working on your project for a while. ";
                 switch(random3)
                 {
                     case 0:
@@ -585,7 +598,7 @@ public class GameManager : MonoBehaviour
                 break;
             case "Game":
                 stress -= 10;
-                desc = "You spend some time relaxing by playing one of your favourite video games.";
+                desc = "You spend some time relaxing by playing one of your favourite video games. ";
                 switch(random3)
                 {
                     case 0:
@@ -601,7 +614,7 @@ public class GameManager : MonoBehaviour
                 break;
             case "SNS":
                 depression -= 10;
-                desc = "You spend a while sitting in bed scrolling through social media on your phone to relieve your worries.";
+                desc = "You spend a while sitting in bed scrolling through social media on your phone to relieve your worries. ";
                 switch(random3)
                 {
                     case 0:
@@ -617,7 +630,7 @@ public class GameManager : MonoBehaviour
                 break;
             case "Video":
                 anxiety -= 10;
-                desc = "You spend a few hours watching videos online to relax.";
+                desc = "You spend a few hours watching videos online to relax. ";
                 switch(random3)
                 {
                     case 0:
@@ -634,7 +647,7 @@ public class GameManager : MonoBehaviour
             case "Music":
                 anxiety -= 5;
                 depression -= 5;
-                desc = "You listen to some of your favourite songs for a while, calming you down.";
+                desc = "You listen to some of your favourite songs for a while, calming you down. ";
                 break;
         }
 
@@ -703,12 +716,28 @@ public class GameManager : MonoBehaviour
             button.interactable = true;
             //Debug.Log("Set buttons true... " + button.interactable);
         }
+
+        if(day == 2)
+        {
+            foreach(Button button in unproductiveActivities)
+            {
+                button.interactable = false;
+                //Debug.Log("Set buttons false... " + button.interactable);
+            }
+        }
+
+        if(day == 3)
+        {
+            chatButton.interactable = false;
+        }
     }
 
     private void ClampStats()
     {
         // Clamp all the stats to between 0 and 100
         // As well as make the sliders red / white depending on their values
+
+        audioManager.Notif();
 
         if(energy < 0)
         {
@@ -746,12 +775,12 @@ public class GameManager : MonoBehaviour
         if(stress >= 75)
         {
             stressImage.color = new Color32(255, 149, 149, 255);
-            audioManager.Heartbeat();
+            stressLines.SetActive(true);
         }
         else
         {
             stressImage.color = new Color32(255, 255, 255, 255);
-            audioManager.StopHeartbeat();
+            stressLines.SetActive(false);
         }
 
         if(anxiety < 0)
@@ -769,10 +798,13 @@ public class GameManager : MonoBehaviour
         if(anxiety >= 75)
         {
             anxietyImage.color = new Color32(255, 149, 149, 255);
+            //Debug.Log("we should be anxious...");
+            audioManager.Heartbeat();
         }
         else
         {
             anxietyImage.color = new Color32(255, 255, 255, 255);
+            audioManager.StopHeartbeat();
         }
 
         if(depression < 0)

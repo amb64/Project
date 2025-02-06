@@ -85,6 +85,8 @@ public class DialogueManager : MonoBehaviour
             doesntNeedPopup = false;
         }
 
+        Debug.Log("popup not needed? - " + doesntNeedPopup);
+
         // Reset for the Game Manager event flow
         fin = false;
 
@@ -160,24 +162,18 @@ public class DialogueManager : MonoBehaviour
             doesntNeedPopup = false;
         }
 
+        Debug.Log("popup not needed? - " + doesntNeedPopup);
+
         // Reset for the Game Manager event flow
         chatFin = false;
 
         // Only if the code isn't 5, as 5 means dont reset previous chat!
-        // 58 compound code as well
-        if (chat.code[0] != 5 && chat.code[0] != 58)
+        // 58/9 compound code as well
+        if (chat.code[0] != 5 && chat.code[0] != 58 && chat.code[0] != 59)
         {
             Debug.Log("Resetting chats... code - " + code + " last dialogue: " + sentenceText4.text);
 
-            // Reset old chatboxes
-            nameText1.text = null;
-            sentenceText1.text = null;
-            nameText2.text = null;
-            sentenceText2.text = null;
-            nameText3.text = null;
-            sentenceText3.text = null;
-            nameText4.text = null;
-            sentenceText4.text = null;
+            ClearChat();
         }
         
         // Clear the old queue
@@ -332,7 +328,10 @@ public class DialogueManager : MonoBehaviour
         nameText.text = "";
         sentenceText.text = "";
 
-        manager.ChangeStats(dialogue.statToAffect, dialogue.effectAmount);
+        if (dialogue.statToAffect != 0)
+        {
+            manager.ChangeStats(dialogue.statToAffect, dialogue.effectAmount);
+        }
 
         fin = true;
         timeslot ++;
@@ -343,7 +342,10 @@ public class DialogueManager : MonoBehaviour
     {
         Debug.Log("End of conversation.");
 
-        manager.ChangeStats(chat.statToAffect, chat.effectAmount);
+        if (chat.statToAffect != 0)
+        {
+           manager.ChangeStats(chat.statToAffect, chat.effectAmount);
+        }
 
         // Close box animation
         //animator.SetBool("isOpen", false);
@@ -351,6 +353,23 @@ public class DialogueManager : MonoBehaviour
         chatFin = true;
         timeslot ++;
         //Debug.Log("Fin trueeee i think - " + fin);
+    }
+
+    public void ClearChat()
+    {
+        // Reset old chatboxes
+            nameText1.text = null;
+            sentenceText1.text = null;
+            nameText2.text = null;
+            sentenceText2.text = null;
+            nameText3.text = null;
+            sentenceText3.text = null;
+            nameText4.text = null;
+            sentenceText4.text = "No new messages.";
+
+            cover1.SetActive(true);
+            cover2.SetActive(true);
+            cover3.SetActive(true);
     }
     
 }

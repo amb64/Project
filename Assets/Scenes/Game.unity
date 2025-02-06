@@ -1512,6 +1512,108 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 152683830}
   m_CullTransparentMesh: 1
+--- !u!1 &168208651
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 168208652}
+  - component: {fileID: 168208653}
+  m_Layer: 0
+  m_Name: Day 3 - Afternoon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &168208652
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168208651}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 938359925}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &168208653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168208651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a718434ad73bcc54aacd45cca946e26e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name:
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - Notice
+    statToAffect: 4
+    effectAmount: 10
+    doesntNeedPopup: 0
+    sentences:
+    - As hard as you try to distract yourself, it's to no avail.
+    - It's just impossible to stay calm after what happened this morning.
+    - You feel worthless.
+    - Your breathing quickens.
+    - You start missing breaths.
+    - It feels like you're choking.
+    - It feels like you're going to pass out.
+    - You're useless.
+    - A mess.
+    - You can't do anything.
+    - Everybody hates you.
+    - You're alone.
+    - Nobody wants to talk to you.
+    - You'll never be successful.
+    - You'll never be happy.
+    - You should just disappear.
+    - You should just die.
+    - These thoughts swirl around in your head for what feels like forever.
+    - You shut your eyes as you cry yourself to sleep at your desk.
+    - The next time you open your eyes, you feel strangely refreshed.
+    - But your entire body aches.
+    - And your head is pounding like crazy.
+    - You try to think of a way to relax.
+    - You don't want to feel like that again.
+    - +10 to depression.
+    code: 0200000008000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a000000
+  isChat: 0
 --- !u!1 &168722136
 GameObject:
   m_ObjectHideFlags: 0
@@ -1735,12 +1837,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 169795399}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1716225241}
+  m_Father: {fileID: 427579623}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &169795401
 MonoBehaviour:
@@ -1771,6 +1873,103 @@ MonoBehaviour:
     - This ending is canon imo
     - it all goes full circle....
     code: 020000000600000000000000070000000f000000
+  isChat: 0
+--- !u!1 &173051545
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 173051546}
+  - component: {fileID: 173051547}
+  m_Layer: 0
+  m_Name: Day 2 - Afternoon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &173051546
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173051545}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1943650289}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &173051547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173051545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a718434ad73bcc54aacd45cca946e26e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name:
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - Email
+    - Email
+    - You
+    - You
+    - 
+    - 
+    - Notice
+    statToAffect: 3
+    effectAmount: 15
+    doesntNeedPopup: 0
+    sentences:
+    - You start to lose your focus, opting to scroll through social media instead
+      of being productive.
+    - Aside from the mass of cute cat pictures and memes,
+    - You scroll for long enough that you start to feel increasingly anxious.
+    - Photos of your friends spending time together.
+    - Why weren't you invited? Do they not want you there?
+    - Photos of people that look better than you.
+    - Friends and family talking about their achievements.
+    - New jobs,
+    - relationships,
+    - graduations,
+    - holidays.
+    - You feel useless.
+    - Good things don't happen to you.
+    - They never will.
+    - Your phone buzzes.
+    - '"Reminder about your oustanding project"'
+    - '"Please don''t forget to hand in your project today."'
+    - '"I''m so useless."'
+    - '"I can''t get anything done."'
+    - You sigh.
+    - Time to focus again.
+    - +15 to anxiety.
+    code: 0200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a000000
   isChat: 0
 --- !u!1 &187077902
 GameObject:
@@ -2010,6 +2209,7 @@ Transform:
   - {fileID: 411575072}
   - {fileID: 600847846}
   - {fileID: 741022174}
+  - {fileID: 775661135}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &200950283
@@ -2133,21 +2333,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     name:
-    - Ame
-    - Ame
-    - Ame
-    - Ame
-    - Ame
+    - 
+    - You
+    - You
     statToAffect: 0
     effectAmount: 0
     doesntNeedPopup: 0
     sentences:
-    - mimimimi
-    - im so so sleepy
-    - "ig its time to eep\t"
-    - honk shooo
-    - im an eeper
-    code: 020000000600000000000000070000000c000000
+    - After some time, you hear a chime.
+    - '"Oh my gosh. That''s her."'
+    - '"She replied."'
+    code: 000000000000000004000000
   isChat: 0
 --- !u!1 &234526393
 GameObject:
@@ -2350,9 +2546,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Dialogue text will go here. This is some dummy dialogue to show how the
-    textbox will look with more words in it. It's not that interesting. How many
-    words can we fit in this textbox? I dont know!
+  m_text: No new messages.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9ecf754074c36a14baf3c7b941a348e3, type: 2}
   m_sharedMaterial: {fileID: -654585904521267908, guid: 9ecf754074c36a14baf3c7b941a348e3, type: 2}
@@ -2379,7 +2573,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 33.1
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3682,6 +3876,68 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 374937063}
   m_CullTransparentMesh: 1
+--- !u!1 &411296601
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 411296602}
+  - component: {fileID: 411296603}
+  m_Layer: 0
+  m_Name: Day 3 - Evening
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &411296602
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411296601}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 938359925}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &411296603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411296601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a718434ad73bcc54aacd45cca946e26e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name:
+    - You
+    - You
+    - Friend C
+    - Friend B
+    - Friend A
+    statToAffect: 0
+    effectAmount: 0
+    doesntNeedPopup: 1
+    sentences:
+    - hey
+    - can we talk?
+    - sure, what's up?
+    - are you doing okay?
+    - go ahead!
+    code: 0000000000000000000000000000000000000000
+  isChat: 1
 --- !u!1 &411575071
 GameObject:
   m_ObjectHideFlags: 0
@@ -3845,6 +4101,39 @@ Transform:
   - {fileID: 605567337}
   m_Father: {fileID: 1812023724}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &427579622
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 427579623}
+  m_Layer: 0
+  m_Name: Endings
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &427579623
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427579622}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1388538264}
+  - {fileID: 169795400}
+  m_Father: {fileID: 1372949393}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &453946240
 GameObject:
   m_ObjectHideFlags: 0
@@ -3931,7 +4220,7 @@ GameObject:
   - component: {fileID: 480396874}
   - component: {fileID: 480396875}
   m_Layer: 0
-  m_Name: Day 1 - Evening
+  m_Name: Day 1 - Afternoon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3966,26 +4255,94 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     name:
-    - Ame
-    - Evil Ame
-    - Ame
-    - Evil Ame
-    - Ame
-    - Ame
-    - Ame
+    - You
+    - You
+    - You
     statToAffect: 0
     effectAmount: 0
+    doesntNeedPopup: 1
+    sentences:
+    - are you okay?
+    - you didn't reply last night
+    - let me know if something's up
+    code: 000000000000000000000000
+  isChat: 1
+--- !u!1 &484171282
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 484171283}
+  - component: {fileID: 484171284}
+  m_Layer: 0
+  m_Name: Day 2 - Morning
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &484171283
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484171282}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1943650289}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &484171284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484171282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a718434ad73bcc54aacd45cca946e26e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name:
+    - You
+    - 
+    - 
+    - Email
+    - Email
+    - Email
+    - Email
+    - 
+    - 
+    - 
+    - 
+    - 
+    statToAffect: 2
+    effectAmount: 25
     doesntNeedPopup: 0
     sentences:
-    - ayo this ame on discord wassupppp
-    - girl do your work you procrastinator
-    - but i dont want to.
-    - LOOOOOOSERRR
-    - anyway idfk what else to say um um
-    - 'burger? tasty? i ate 3 bananas today '
-    - i hope the chat function works!!
-    code: 04000000000000000000000000000000000000000000000000000000
-  isChat: 1
+    - '"What the heck.... is that noise...."'
+    - You're rudely awoken by notification after notification on your phone.
+    - It's your supervisor.
+    - '"The project you''re working on was due yesterday."'
+    - '"This isn''t the first time you''ve been late."'
+    - '"Please finalise the project today."'
+    - '"I can''t give you any more chances."'
+    - Great.
+    - You completely forgot.
+    - You scramble out of bed and to your desk.
+    - If you don't finish this by today you're going to be in massive trouble.
+    - It might be best to focus on getting this done for today.
+    code: 00000000060000000000000000000000000000000000000000000000000000000000000003000000000000000a000000
+  isChat: 0
 --- !u!1 &501501461
 GameObject:
   m_ObjectHideFlags: 0
@@ -4866,26 +5223,96 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     name:
-    - Ame
-    - Ame
-    - Ame
-    - EVIL Ame
-    - EVIL Ame
-    - EVIL Ame
     - 
-    statToAffect: 1
-    effectAmount: 15
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    statToAffect: 0
+    effectAmount: 0
     doesntNeedPopup: 0
     sentences:
-    - Hi there! This is some test dialogue.
-    - I'm depressed... can you fix me?
-    - Ame wuz here
-    - I'm EVIL Ame... big difference.
-    - Big. Big. Difference.
-    - Very important.
-    - Energy +15
-    code: 0600000000000000000000000000000000000000000000000a000000
+    - Wake up, eat, sleep, repeat.
+    - That's the way you've lived for as long as you can remember.
+    - Every day you struggle to find a reason to get out of bed.
+    - Today is no exception.
+    - It's as if something is weighing down on you.
+    - Long ago, you might have wanted to lift that weight.
+    - But now you've grown used the feeling.
+    - Like it's part of you.
+    - Protecting you.
+    - Maybe you'll just stay in bed for a little while longer.
+    - After all, if you were trapped under a building
+    - you wouldn't be able to get out so easily by yourself.
+    code: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   isChat: 0
+--- !u!1 &545480341
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 545480342}
+  - component: {fileID: 545480343}
+  m_Layer: 0
+  m_Name: Day 2 - Evening
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &545480342
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545480341}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1943650289}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &545480343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545480341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a718434ad73bcc54aacd45cca946e26e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name:
+    - Friend B
+    - Friend B
+    - Friend B
+    - Friend B
+    statToAffect: 0
+    effectAmount: 0
+    doesntNeedPopup: 1
+    sentences:
+    - hey hey hey!!
+    - me and the others havent heard from you all day..
+    - we're just a bit worried!
+    - so i thought i'd ask if you're doing okay! ^^
+    code: 00000000000000000000000000000000
+  isChat: 1
 --- !u!1 &551149955
 GameObject:
   m_ObjectHideFlags: 0
@@ -5230,6 +5657,7 @@ RectTransform:
   - {fileID: 864459963}
   - {fileID: 618955384}
   - {fileID: 870092067}
+  - {fileID: 1928174059}
   - {fileID: 1479540462}
   - {fileID: 1207186}
   - {fileID: 2087275819}
@@ -5286,7 +5714,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d356880d36f803140ab8872020744910, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.25
+  m_Volume: 0.45
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5895,6 +6323,123 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 623676056}
   m_CullTransparentMesh: 1
+--- !u!1 &640923775
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 640923776}
+  - component: {fileID: 640923777}
+  m_Layer: 0
+  m_Name: Day 3 - Morning
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &640923776
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640923775}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 938359925}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &640923777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640923775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a718434ad73bcc54aacd45cca946e26e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name:
+    - 
+    - 
+    - 
+    - Sibling
+    - 
+    - Sibling
+    - 
+    - Sibling
+    - 
+    - Sibling
+    - You
+    - Sibling
+    - Sibling
+    - Sibling
+    - You
+    - Sibling
+    - Sibling
+    - You
+    - Sibling
+    - You
+    - Sibling
+    - Sibling
+    - Sibling
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - Notice
+    statToAffect: 4
+    effectAmount: 20
+    doesntNeedPopup: 0
+    sentences:
+    - '*knock knock*'
+    - '*knock knock knock knock*'
+    - '*knock knock knock knock knock knock knock*'
+    - Let me in.
+    - '*knock knock knock knock*'
+    - I said, let me in.
+    - You thought ignoring your sibling would do the trick, but they forgo your privacy
+      and let themself in.
+    - How are you still asleep at this time? Get up.
+    - You sit up, rubbing your eyes.
+    - Ugh, it stinks in here. You need to open a window.
+    - Sorry.
+    - Yea, you better be for this assault on my nostrils.
+    - Anyway. You need to go outside.
+    - You can't stay holed up in here forever.
+    - I just don't really want to go out.
+    - If you don't go outside you're just gonna rot away.
+    - You need to get a proper job or something.
+    - I have one.
+    - Yea, not a proper one though. You're just useless.
+    - Is that it?
+    - Yea. You need to go outside. It's gross in here.
+    - You're gross.
+    - Honestly... sometimes I wish you would just disappear.
+    - They walk out of the room.
+    - It hurts, but you're used to it.
+    - You're used to it. Yet you can't help but cry.
+    - You cry for a while, until you can't breathe anymore.
+    - You cry until your head pounds.
+    - You cry until your body tells you to stop.
+    - Eventually, you wipe your face on the bedsheets.
+    - You need to take your mind off of this somehow.
+    - +20 to depression.
+    code: 060000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a000000
+  isChat: 0
 --- !u!1 &666300420
 GameObject:
   m_ObjectHideFlags: 0
@@ -6317,6 +6862,7 @@ MonoBehaviour:
   bgMusicDistorted: {fileID: 411575073}
   mouse: {fileID: 741022175}
   heartbeat: {fileID: 600847847}
+  notif: {fileID: 775661136}
 --- !u!1 &700582397
 GameObject:
   m_ObjectHideFlags: 0
@@ -6619,6 +7165,62 @@ RectTransform:
   m_AnchoredPosition: {x: 93.04675, y: -581.4086}
   m_SizeDelta: {x: 510.3609, y: 312.56345}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &726676769
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 726676770}
+  - component: {fileID: 726676771}
+  m_Layer: 0
+  m_Name: Day 2 - Evening
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &726676770
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726676769}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1943650289}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &726676771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726676769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a718434ad73bcc54aacd45cca946e26e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name:
+    - You
+    - You
+    statToAffect: 0
+    effectAmount: 0
+    doesntNeedPopup: 1
+    sentences:
+    - '"I bet they wouldn''t want me there anyways."'
+    - '"They''re just inviting me out of pity."'
+    code: 0800000000000000
+  isChat: 0
 --- !u!1 &741022173
 GameObject:
   m_ObjectHideFlags: 0
@@ -6664,6 +7266,134 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 7bae28d7e236c7c4d91c361f824959f0, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.4
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!1 &775661134
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 775661135}
+  - component: {fileID: 775661136}
+  m_Layer: 0
+  m_Name: Notif
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &775661135
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775661134}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 200115901}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &775661136
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775661134}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: db8734ffd19de354db8b948315058798, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -7620,6 +8350,68 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &890209961
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 890209962}
+  - component: {fileID: 890209963}
+  m_Layer: 0
+  m_Name: Day 1 - Late night
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &890209962
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890209961}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1716225241}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &890209963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890209961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a718434ad73bcc54aacd45cca946e26e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name:
+    - 
+    - 
+    - 
+    - 
+    - 
+    statToAffect: 0
+    effectAmount: 0
+    doesntNeedPopup: 0
+    sentences:
+    - You've had enough.
+    - You just can't get it off your mind.
+    - How terrible of a friend you are.
+    - How terrible of a person you are.
+    - You turn off your computer, get up, and get into bed.
+    code: 020000000000000000000000000000000c000000
+  isChat: 0
 --- !u!1 &892875074
 GameObject:
   m_ObjectHideFlags: 0
@@ -8187,6 +8979,106 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 917185876}
   m_CullTransparentMesh: 1
+--- !u!1 &920142408
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 920142409}
+  - component: {fileID: 920142410}
+  m_Layer: 0
+  m_Name: Day 2 - Late night
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &920142409
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920142408}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1943650289}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &920142410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920142408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a718434ad73bcc54aacd45cca946e26e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name:
+    - 
+    - 
+    - 
+    - 
+    statToAffect: 0
+    effectAmount: 0
+    doesntNeedPopup: 0
+    sentences:
+    - You manage to avoid an all-nighter, finishing your project much earlier than
+      expected.
+    - You don't even care how good it is.
+    - Just that it's done and your responsibilities are staved off for another day.
+    - You wobble into bed to sleep.
+    code: 0200000006000000000000000c000000
+  isChat: 0
+--- !u!1 &938359924
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 938359925}
+  m_Layer: 0
+  m_Name: Day3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &938359925
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938359924}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 640923776}
+  - {fileID: 168208652}
+  - {fileID: 1880921934}
+  - {fileID: 411296602}
+  - {fileID: 1878065593}
+  - {fileID: 1754212695}
+  - {fileID: 1567084654}
+  - {fileID: 2137146622}
+  m_Father: {fileID: 1372949393}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &971686063
 GameObject:
   m_ObjectHideFlags: 0
@@ -8233,24 +9125,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     name:
-    - Ame
-    - Ame
-    - Ame
-    - EVIL Ame
-    - EVIL Ame
-    - EVIL Ame
-    statToAffect: 4
-    effectAmount: 25
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - You
+    - You
+    - 
+    - You
+    - Notice
+    statToAffect: 3
+    effectAmount: 15
     doesntNeedPopup: 0
     sentences:
-    - "Wow! This is the computer.\t"
-    - I love my computer
-    - Welp time to play genshin impact
-    - NO you need to do your work...
-    - Work not genshin.
-    - The joke is that I'm evil so I dont want you to play games I want you to do
-      work but you don't wnat to do work so its evil.
-    code: 03000000000000000000000000000000000000000a000000
+    - Hours pass, and eventually the light seeping through your curtains is too blinding
+      to ignore.
+    - It's as if the rest of the world is mocking you.
+    - You drag yourself out of bed and to your desk.
+    - Each step feels like you're walking through superglue.
+    - You sit down and turn on your computer.
+    - As the screen turns on, you flick through your messages.
+    - Absolutely nothing.
+    - '"Wasn''t I talking to her last night? Why hasn''t she replied yet?"'
+    - '"I just wanted to talk about that new movie- I wonder why she hasn''t replied
+      yet."'
+    - You scour through every group and chat your friend is part of.
+    - '"She''s been talking to everyone else, is everything okay?"'
+    - +15 to anxiety.
+    code: 000000000000000006000000000000000000000003000000040000000800000000000000090000000000000000000000
   isChat: 0
 --- !u!1 &971702298
 GameObject:
@@ -8428,6 +9333,11 @@ MonoBehaviour:
   - {fileID: 258676907}
   - {fileID: 1255052869}
   - {fileID: 1220884907}
+  unproductiveActivities:
+  - {fileID: 1989650657}
+  - {fileID: 247779882}
+  - {fileID: 1255052869}
+  chatButton: {fileID: 1989650657}
   popupWindow: {fileID: 1117216127}
   errorWindow: {fileID: 1238019152}
   titleText: {fileID: 788556454}
@@ -8453,9 +9363,35 @@ MonoBehaviour:
   - {fileID: 543948648}
   - {fileID: 971686063}
   - {fileID: 480396873}
+  - {fileID: 2004874024}
   - {fileID: 1174447934}
-  - {fileID: 1546955606}
+  - {fileID: 1395398162}
+  - {fileID: 1238453995}
   - {fileID: 229036970}
+  - {fileID: 1946166635}
+  - {fileID: 1031001762}
+  - {fileID: 2132458525}
+  - {fileID: 2119221363}
+  - {fileID: 890209961}
+  - {fileID: 484171282}
+  - {fileID: 173051545}
+  - {fileID: 1765317230}
+  - {fileID: 545480341}
+  - {fileID: 1880718153}
+  - {fileID: 1542568212}
+  - {fileID: 726676769}
+  - {fileID: 1287881006}
+  - {fileID: 1028837945}
+  - {fileID: 2016649977}
+  - {fileID: 920142408}
+  - {fileID: 640923775}
+  - {fileID: 168208651}
+  - {fileID: 1880921933}
+  - {fileID: 411296601}
+  - {fileID: 1878065592}
+  - {fileID: 1754212694}
+  - {fileID: 1567084653}
+  - {fileID: 2137146621}
   dayTransition: {fileID: 1359702265}
   transitionText: {fileID: 504846353}
   statChanges: {fileID: 1243311956}
@@ -8477,6 +9413,7 @@ MonoBehaviour:
   current_screen: {fileID: 0}
   fullBody: {fileID: 1307729595}
   closeUp: {fileID: 200950283}
+  stressLines: {fileID: 1928174058}
 --- !u!4 &1004850907
 Transform:
   m_ObjectHideFlags: 0
@@ -8626,6 +9563,130 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1012806159}
   m_CullTransparentMesh: 1
+--- !u!1 &1028837945
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1028837946}
+  - component: {fileID: 1028837947}
+  m_Layer: 0
+  m_Name: Day 2 - Evening
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1028837946
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1028837945}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1943650289}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1028837947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1028837945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a718434ad73bcc54aacd45cca946e26e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name:
+    - 
+    - 
+    - 
+    - 
+    - Notice
+    statToAffect: 4
+    effectAmount: 20
+    doesntNeedPopup: 1
+    sentences:
+    - You're still upset about what happened yesterday.
+    - You don't really want to spend time with people.
+    - You don't deserve to have fun after all.
+    - You don't deserve friends.
+    - +20 to depression.
+    code: 000000000000000000000000000000000a000000
+  isChat: 0
+--- !u!1 &1031001762
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1031001763}
+  - component: {fileID: 1031001764}
+  m_Layer: 0
+  m_Name: Day 1 - Night
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1031001763
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031001762}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1716225241}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1031001764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031001762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a718434ad73bcc54aacd45cca946e26e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name:
+    - You
+    - You
+    - You
+    - You
+    - 
+    statToAffect: 0
+    effectAmount: 0
+    doesntNeedPopup: 1
+    sentences:
+    - '"Gosh, I''m the worst."'
+    - '"Even if I don''t do that again it''s not like it''ll change how I feel."'
+    - '"Nobody ever wants to talk to me anyway."'
+    - '"Even though she says it''s fine, I know that she doesn''t really like me."'
+    - Your hands shaking, you decide you might as well ask.
+    code: 0800000000000000000000000000000009000000
+  isChat: 0
 --- !u!1 &1032980769
 GameObject:
   m_ObjectHideFlags: 0
@@ -9359,19 +10420,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     name:
-    - Ame
-    - Ame
-    - Ame
-    - Ame
+    - 
+    - 
+    - You
+    - You
+    - You
+    - 
+    - 
+    - 
     statToAffect: 0
     effectAmount: 0
-    doesntNeedPopup: 1
+    doesntNeedPopup: 0
     sentences:
-    - ayo this ame talking toherself
-    - "lalalalalallala what should i do\t"
-    - i should play genshin impact. yes.
-    - disappear my face
-    code: 3a000000000000000000000009000000
+    - After some time, you slip back into boredom.
+    - Alone with your thoughts, your mind wanders.
+    - '"She still hasn''t replied to me."'
+    - '"I must have done something wrong, then."'
+    - '"She''s talking to everyone but me."'
+    - Your stomach drops.
+    - It all makes sense now.
+    - Or, at least you think it does.
+    code: 0000000000000000040000000800000009000000000000000000000000000000
   isChat: 0
 --- !u!1 &1176648500
 GameObject:
@@ -10026,6 +11095,93 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1238019152}
   m_CullTransparentMesh: 1
+--- !u!1 &1238453995
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1238453996}
+  - component: {fileID: 1238453997}
+  m_Layer: 0
+  m_Name: Day 1 - Evening
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1238453996
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238453995}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1716225241}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1238453997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238453995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a718434ad73bcc54aacd45cca946e26e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name:
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - You
+    - You
+    - You
+    - You
+    - 
+    - 
+    - 
+    - 
+    - 
+    - You
+    - Notice
+    statToAffect: 3
+    effectAmount: 15
+    doesntNeedPopup: 1
+    sentences:
+    - Your heart pounds, threatening to burst out of your chest.
+    - As soon as you hit "send" on each message, you regret them instantly.
+    - Maybe you are overreacting.
+    - Maybe you haven't done anything wrong.
+    - But if you did, and you assumed that you didn't
+    - she'd definitely be even more upset.
+    - '"I''m a horrible person, aren''t I"'
+    - '"It''s not like I can take it back now. The notifications would still show
+      up even if i delete all those messages."'
+    - '"I''m such an idiot."'
+    - '"It''s over now. She''ll never talk to me again."'
+    - You cover your face, sighing.
+    - 'You''re shaking. '
+    - Nervous.
+    - Any second it could all come crashing down.
+    - There's no way you'll be able to sleep until she replies.
+    - '"I hope that''s soon."'
+    - +15 to anxiety.
+    code: 000000000000000000000000000000000000000000000000080000000000000000000000000000000900000000000000000000000000000000000000000000000a000000
+  isChat: 0
 --- !u!1 &1243311954
 GameObject:
   m_ObjectHideFlags: 0
@@ -10360,6 +11516,64 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1255052867}
   m_CullTransparentMesh: 1
+--- !u!1 &1287881006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1287881007}
+  - component: {fileID: 1287881008}
+  m_Layer: 0
+  m_Name: Day 2 - Evening
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1287881007
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287881006}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1943650289}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1287881008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287881006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a718434ad73bcc54aacd45cca946e26e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name:
+    - You
+    - You
+    - Friend B
+    statToAffect: 0
+    effectAmount: 0
+    doesntNeedPopup: 1
+    sentences:
+    - i'm not up for it, sorry
+    - way too busy
+    - that's ok! another time then!
+    code: 3b0000000000000000000000
+  isChat: 1
 --- !u!1 &1307729595
 GameObject:
   m_ObjectHideFlags: 0
@@ -11092,6 +12306,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1716225241}
+  - {fileID: 1943650289}
+  - {fileID: 938359925}
+  - {fileID: 427579623}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1377551377
@@ -11407,12 +12624,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1388538263}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1716225241}
+  m_Father: {fileID: 427579623}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1388538265
 MonoBehaviour:
@@ -11519,6 +12736,84 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1394894749}
   m_CullTransparentMesh: 1
+--- !u!1 &1395398162
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1395398163}
+  - component: {fileID: 1395398164}
+  m_Layer: 0
+  m_Name: Day 1 - Evening
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1395398163
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395398162}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1716225241}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1395398164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395398162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a718434ad73bcc54aacd45cca946e26e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name:
+    - You
+    - You
+    - You
+    - You
+    - You
+    - You
+    - You
+    - You
+    - You
+    - You
+    - You
+    - You
+    - You
+    statToAffect: 0
+    effectAmount: 0
+    doesntNeedPopup: 1
+    sentences:
+    - have i done something to hurt you?
+    - i was just wondering because you're talking to everyone else
+    - but not me
+    - it's okay if i have done something wrong, i just want to know
+    - i'm really sorry if i have
+    - i'm sorry if you hate me
+    - whatever i did wrong i'll never do it again
+    - i promise
+    - please don't hate me
+    - but if you do hate me then
+    - please tell me
+    - if you don't want to talk to me anymore that's ok
+    - i'm really sorry
+    code: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  isChat: 1
 --- !u!1 &1402837392
 GameObject:
   m_ObjectHideFlags: 0
@@ -12919,6 +14214,70 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1523264063}
   m_CullTransparentMesh: 1
+--- !u!1 &1542568212
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1542568213}
+  - component: {fileID: 1542568214}
+  m_Layer: 0
+  m_Name: Day 2 - Evening
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1542568213
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542568212}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1943650289}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1542568214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542568212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a718434ad73bcc54aacd45cca946e26e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name:
+    - You
+    - Friend B
+    - Friend B
+    - Friend B
+    - Friend B
+    - Friend B
+    statToAffect: 0
+    effectAmount: 0
+    doesntNeedPopup: 1
+    sentences:
+    - i'm just busy. got a lot to do
+    - oh!! no worries!
+    - glad that you're okay! :)
+    - oh! by the way
+    - do you wanna all hang out tomorrow?
+    - we could have some fun and you could relax a bit!!
+    code: 050000000000000000000000000000000000000000000000
+  isChat: 1
 --- !u!1 &1546327527
 GameObject:
   m_ObjectHideFlags: 0
@@ -12994,72 +14353,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1546327527}
   m_CullTransparentMesh: 1
---- !u!1 &1546955606
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1546955607}
-  - component: {fileID: 1546955608}
-  m_Layer: 0
-  m_Name: Day 1 - Evening
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1546955607
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1546955606}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1716225241}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1546955608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1546955606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a718434ad73bcc54aacd45cca946e26e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    name:
-    - Ame
-    - Evil Ame
-    - Ame
-    - Evil Ame
-    - Ame
-    - Ame
-    - Ame
-    statToAffect: 0
-    effectAmount: 0
-    doesntNeedPopup: 1
-    sentences:
-    - "lets have a chat again evil ame!\t"
-    - im evil i do not take part in menial discussion
-    - wellll now what
-    - "idk you are the one that initiated this\t"
-    - and i will be the one to end it!!
-    - begone! evil ame
-    - anyways moving on
-    code: 0500000000000000000000000000000000000000000000000a000000
-  isChat: 1
 --- !u!1 &1564135280
 GameObject:
   m_ObjectHideFlags: 0
@@ -13142,10 +14435,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1004850906}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: NextDayEvents
-        m_Mode: 1
+      - m_Target: {fileID: 1882167979}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -13154,10 +14447,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1882167979}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1004850906}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: NextDayEvents
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -13350,6 +14643,80 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1565588439}
   m_CullTransparentMesh: 1
+--- !u!1 &1567084653
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1567084654}
+  - component: {fileID: 1567084655}
+  m_Layer: 0
+  m_Name: Day 3 - Night
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1567084654
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567084653}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 938359925}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1567084655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567084653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a718434ad73bcc54aacd45cca946e26e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name:
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    statToAffect: 0
+    effectAmount: 0
+    doesntNeedPopup: 1
+    sentences:
+    - You play with your friends for a few hours.
+    - You haven't heard their voices in a long time.
+    - It's fun, but melancholic.
+    - It still hurts inside.
+    - You know that soon you'll be left alone again.
+    - Alone with your thoughts.
+    - And when the five of you start getting tired of the game, you say your goodbyes.
+    - It was fun, but it hurts.
+    - You're not tired yet, though. You did have an unexpected nap during the day
+      after all.
+    - Maybe there's something else you can try and do to prolong being alone with
+      your own thoughts for just a little bit longer.
+    code: 0200000006000000000000000000000000000000000000000000000002000000000000000a000000
+  isChat: 0
 --- !u!1 &1589474500
 GameObject:
   m_ObjectHideFlags: 0
@@ -13443,7 +14810,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 8
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -14402,11 +15769,16 @@ Transform:
   - {fileID: 543948649}
   - {fileID: 971686064}
   - {fileID: 480396874}
+  - {fileID: 2004874025}
   - {fileID: 1174447935}
-  - {fileID: 1546955607}
+  - {fileID: 1395398163}
+  - {fileID: 1238453996}
   - {fileID: 229036971}
-  - {fileID: 1388538264}
-  - {fileID: 169795400}
+  - {fileID: 1946166636}
+  - {fileID: 1031001763}
+  - {fileID: 2132458526}
+  - {fileID: 2119221364}
+  - {fileID: 890209962}
   m_Father: {fileID: 1372949393}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1717641473
@@ -15259,6 +16631,135 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1752640006}
   m_CullTransparentMesh: 1
+--- !u!1 &1754212694
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1754212695}
+  - component: {fileID: 1754212696}
+  m_Layer: 0
+  m_Name: Day 3 - Evening
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1754212695
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754212694}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 938359925}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1754212696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754212694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a718434ad73bcc54aacd45cca946e26e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name:
+    - Friend B
+    - You
+    - You
+    - Friend D
+    - Friend C
+    - Friend A
+    - Friend A
+    - Friend B
+    - You
+    - You
+    - You
+    - Friend B
+    statToAffect: 0
+    effectAmount: 0
+    doesntNeedPopup: 1
+    sentences:
+    - what's up? you can tell us!
+    - i was just wondering if you guys would want to do something together
+    - but i know you all went somewhere today already
+    - we did, but we could play something tonight together if you want?
+    - yea! let's do that!
+    - how about we play that farming game together?
+    - you've been meaning to play it right?
+    - ooo yea, i've heard its super fun !! we should play together!
+    - okay
+    - are you all free now?
+    - we are! ^^
+    code: 0500000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  isChat: 1
+--- !u!1 &1765317230
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1765317231}
+  - component: {fileID: 1765317232}
+  m_Layer: 0
+  m_Name: Day 2 - Evening
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1765317231
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765317230}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1943650289}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1765317232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765317230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a718434ad73bcc54aacd45cca946e26e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name:
+    - 
+    statToAffect: 0
+    effectAmount: 0
+    doesntNeedPopup: 0
+    sentences:
+    - You get a new message notification.
+    code: 04000000
+  isChat: 0
 --- !u!1 &1767934985
 GameObject:
   m_ObjectHideFlags: 0
@@ -16198,7 +17699,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Speaker Name
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9ecf754074c36a14baf3c7b941a348e3, type: 2}
   m_sharedMaterial: {fileID: -654585904521267908, guid: 9ecf754074c36a14baf3c7b941a348e3, type: 2}
@@ -16225,7 +17726,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 43.55
+  m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -16543,6 +18044,210 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1875987017}
   m_CullTransparentMesh: 1
+--- !u!1 &1878065592
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1878065593}
+  - component: {fileID: 1878065594}
+  m_Layer: 0
+  m_Name: Day 3 - Evening
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1878065593
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878065592}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 938359925}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1878065594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878065592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a718434ad73bcc54aacd45cca946e26e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name:
+    - You
+    - You
+    - You
+    - You
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    statToAffect: 0
+    effectAmount: 0
+    doesntNeedPopup: 1
+    sentences:
+    - '"Should I even tell them?"'
+    - '"Will they even care?"'
+    - '"It''s not like they''ll even be able to solve my problems."'
+    - '"It hurts, but I just need to deal with this myself."'
+    - Yes, like you always have.
+    - You just need to get used to the increase in that weight.
+    - Until it envelopes you whole.
+    - Until it becomes one with you.
+    - Until it becomes comforting.
+    - Yes, there's no need to bother others.
+    - They don't care about you after all.
+    code: 0800000000000000000000000000000009000000000000000000000000000000000000000000000000000000
+  isChat: 0
+--- !u!1 &1880718153
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1880718154}
+  - component: {fileID: 1880718155}
+  m_Layer: 0
+  m_Name: Day 2 - Evening
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1880718154
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880718153}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1943650289}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1880718155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880718153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a718434ad73bcc54aacd45cca946e26e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name:
+    - You
+    - 
+    - 
+    - 
+    - 
+    - 
+    statToAffect: 0
+    effectAmount: 0
+    doesntNeedPopup: 1
+    sentences:
+    - '"Oh... they''re worried about me"'
+    - You scoff.
+    - Oh, the irony.
+    - They never start freaking out if you don't reply when you're busy.
+    - But you do.
+    - There's something wrong with you.
+    code: 080000000900000000000000000000000000000000000000
+  isChat: 0
+--- !u!1 &1880921933
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1880921934}
+  - component: {fileID: 1880921935}
+  m_Layer: 0
+  m_Name: Day 3 - Evening
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1880921934
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880921933}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 938359925}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1880921935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880921933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a718434ad73bcc54aacd45cca946e26e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name:
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    statToAffect: 0
+    effectAmount: 0
+    doesntNeedPopup: 0
+    sentences:
+    - You feel a bit calmer.
+    - Emphasis on a bit.
+    - Your entire being hurts.
+    - The weight that you're used to feels heavier than ever before.
+    - You just need something-
+    - someone-
+    - and maybe then you'll feel better.
+    code: 08000000000000000000000000000000000000000400000000000000
+  isChat: 0
 --- !u!1 &1882167979
 GameObject:
   m_ObjectHideFlags: 0
@@ -16807,6 +18512,193 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1899983257}
   m_CullTransparentMesh: 1
+--- !u!1 &1928174058
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1928174059}
+  - component: {fileID: 1928174061}
+  - component: {fileID: 1928174060}
+  m_Layer: 5
+  m_Name: StressImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1928174059
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1928174058}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 599027608}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 4648.8145, y: 2586.9836}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1928174060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1928174058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.14901961}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: dd1c4a82ba24fff4e9fc32b6f89dcfe5, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1928174061
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1928174058}
+  m_CullTransparentMesh: 1
+--- !u!1 &1943650288
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1943650289}
+  m_Layer: 0
+  m_Name: Day2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1943650289
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943650288}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 484171283}
+  - {fileID: 173051546}
+  - {fileID: 1765317231}
+  - {fileID: 545480342}
+  - {fileID: 1880718154}
+  - {fileID: 1542568213}
+  - {fileID: 726676770}
+  - {fileID: 1287881007}
+  - {fileID: 1028837946}
+  - {fileID: 2016649978}
+  - {fileID: 920142409}
+  m_Father: {fileID: 1372949393}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1946166635
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1946166636}
+  - component: {fileID: 1946166637}
+  m_Layer: 0
+  m_Name: Day 1 - Night
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1946166636
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946166635}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1716225241}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1946166637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946166635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a718434ad73bcc54aacd45cca946e26e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name:
+    - Friend A
+    - Friend A
+    - Friend A
+    - Friend A
+    - You
+    - Friend A
+    - Friend A
+    - Friend A
+    - You
+    statToAffect: 0
+    effectAmount: 0
+    doesntNeedPopup: 1
+    sentences:
+    - what the heck, i was just busy
+    - you didn't do anything, but now you're grossing me out
+    - you think i'd hate you just because i didnt reply for a while?
+    - that hurts. it doesn't feel like you trust me
+    - i'm really sorry
+    - it's fine i guess
+    - please just don't do that again
+    - its creeping me out
+    - i won't, im sorry
+    code: 000000000000000000000000000000000000000000000000000000000000000000000000
+  isChat: 1
 --- !u!1 &1974093572
 GameObject:
   m_ObjectHideFlags: 0
@@ -17280,6 +19172,72 @@ RectTransform:
   m_AnchoredPosition: {x: 41.65391, y: -4.675}
   m_SizeDelta: {x: 96.9878, y: 11.1112}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &2004874024
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2004874025}
+  - component: {fileID: 2004874026}
+  m_Layer: 0
+  m_Name: Day 1 - Afternoon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2004874025
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004874024}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1716225241}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2004874026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004874024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a718434ad73bcc54aacd45cca946e26e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name:
+    - You
+    - 
+    - You
+    - 
+    - 
+    - 
+    - 
+    statToAffect: 0
+    effectAmount: 0
+    doesntNeedPopup: 1
+    sentences:
+    - '"I hope she replies soon. I''m worried."'
+    - You lean back in your chair.
+    - '"Now what..."'
+    - Getting through today, like any other day, will be a drag.
+    - As much as you want to go back to bed, you know that you can't.
+    - You'll get in trouble for being lazy, again.
+    - You need to find something to do.
+    code: 0800000009000000030000000000000000000000000000000a000000
+  isChat: 0
 --- !u!1 &2005188969
 GameObject:
   m_ObjectHideFlags: 0
@@ -17430,6 +19388,61 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2008283205}
   m_CullTransparentMesh: 1
+--- !u!1 &2016649977
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2016649978}
+  - component: {fileID: 2016649979}
+  m_Layer: 0
+  m_Name: Day 2 - Night
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2016649978
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2016649977}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1943650289}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2016649979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2016649977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a718434ad73bcc54aacd45cca946e26e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name:
+    - 
+    statToAffect: 0
+    effectAmount: 0
+    doesntNeedPopup: 0
+    sentences:
+    - As time passes, you get more and more worried about finishing your work on
+      time.
+    code: 0a000000
+  isChat: 0
 --- !u!1 &2019888079
 GameObject:
   m_ObjectHideFlags: 0
@@ -17808,7 +19821,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Chat Name
+  m_text: Chat
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9ecf754074c36a14baf3c7b941a348e3, type: 2}
   m_sharedMaterial: {fileID: -654585904521267908, guid: 9ecf754074c36a14baf3c7b941a348e3, type: 2}
@@ -18076,7 +20089,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &2087275821
 MonoBehaviour:
@@ -18549,6 +20562,213 @@ RectTransform:
   m_AnchoredPosition: {x: 93.04675, y: -793.97205}
   m_SizeDelta: {x: 510.3609, y: 312.56345}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &2119221363
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2119221364}
+  - component: {fileID: 2119221365}
+  m_Layer: 0
+  m_Name: Day 1 - Night
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2119221364
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119221363}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1716225241}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2119221365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119221363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a718434ad73bcc54aacd45cca946e26e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name:
+    - 
+    - 
+    - 
+    - 
+    - Notice
+    statToAffect: 4
+    effectAmount: 15
+    doesntNeedPopup: 1
+    sentences:
+    - You don't know why you bothered asking.
+    - You know that you'll never be able to shake the feeling that it's not just
+      in your head.
+    - And that you're right.
+    - That they all hate you.
+    - +15 to depression.
+    code: 030000000000000000000000000000000a000000
+  isChat: 0
+--- !u!1 &2132458525
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2132458526}
+  - component: {fileID: 2132458527}
+  m_Layer: 0
+  m_Name: Day 1 - Night
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2132458526
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132458525}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1716225241}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2132458527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132458525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a718434ad73bcc54aacd45cca946e26e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name:
+    - You
+    - Friend A
+    - Friend A
+    - You
+    statToAffect: 0
+    effectAmount: 0
+    doesntNeedPopup: 1
+    sentences:
+    - are you sure it's okay?
+    - yes
+    - i'm sure. it's fine.
+    - okay. thanks
+    code: 05000000000000000000000000000000
+  isChat: 1
+--- !u!1 &2137146621
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2137146622}
+  - component: {fileID: 2137146623}
+  m_Layer: 0
+  m_Name: Day 3 - Late night
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2137146622
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137146621}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 938359925}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2137146623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137146621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a718434ad73bcc54aacd45cca946e26e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name:
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - You
+    - You
+    - 
+    statToAffect: 0
+    effectAmount: 0
+    doesntNeedPopup: 1
+    sentences:
+    - Eventually, tiredness sweeps over you.
+    - You haven't gotten used to this new weight yet.
+    - it'll probably take a while.
+    - You might never get used to it.
+    - The thought of that scares you.
+    - Part of you doesn't want to be trapped by that weight anymore.
+    - Part of you doesn't want that weight to cloud over your life anymore.
+    - But the comfort the weight provides is too alluring.
+    - It rips and tears you apart more and more each day.
+    - Each day you're less and less of yourself.
+    - It's terrifying.
+    - But what's more terrifying is the thought of the weight being gone.
+    - You yearn for that freedom, yet fear it at the same time.
+    - '"I wish this would end."'
+    - '"But I''m not strong enough."'
+    - With that thought, you snuggle up under your covers and get some sleep.
+    code: 0200000006000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f000000
+  isChat: 0
 --- !u!1 &2142740180
 GameObject:
   m_ObjectHideFlags: 0
