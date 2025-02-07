@@ -6528,9 +6528,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '50
-
-'
+  m_text: 60
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9ecf754074c36a14baf3c7b941a348e3, type: 2}
   m_sharedMaterial: {fileID: -654585904521267908, guid: 9ecf754074c36a14baf3c7b941a348e3, type: 2}
@@ -7547,27 +7545,27 @@ MonoBehaviour:
     - '*knock knock*'
     - '*knock knock knock knock*'
     - '*knock knock knock knock knock knock knock*'
-    - Let me in.
+    - '"Let me in."'
     - '*knock knock knock knock*'
-    - I said, let me in.
+    - '"I said, let me in."'
     - You thought ignoring your sibling would do the trick, but they forgo your privacy
       and let themself in.
-    - How are you still asleep at this time? Get up.
+    - '"How are you still asleep at this time? Get up."'
     - You sit up, rubbing your eyes.
-    - Ugh, it stinks in here. You need to open a window.
-    - Sorry.
-    - Yea, you better be for this assault on my nostrils.
-    - Anyway. You need to go outside.
-    - You can't stay holed up in here forever.
-    - I just don't really want to go out.
-    - If you don't go outside you're just gonna rot away.
-    - You need to get a proper job or something.
-    - I have one.
-    - Yea, not a proper one though. You're just useless.
-    - Is that it?
-    - Yea. You need to go outside. It's gross in here.
-    - You're gross.
-    - Honestly... sometimes I wish you would just disappear.
+    - '"Ugh, it stinks in here. You need to open a window."'
+    - '"Sorry."'
+    - '"Yea, you better be for this assault on my nostrils."'
+    - '"Anyway. You need to go outside."'
+    - '"You can''t stay holed up in here forever."'
+    - '"I just don''t really want to go out."'
+    - '"If you don''t go outside you''re just gonna rot away."'
+    - '"You need to get a proper job or something."'
+    - '"I have one."'
+    - '"Yea, not a proper one though. You''re just useless."'
+    - '"Is that it?"'
+    - '"Yea. You need to go outside. It''s gross in here."'
+    - '"You''re gross."'
+    - '"Honestly... sometimes I wish you would just disappear."'
     - They walk out of the room.
     - It hurts, but you're used to it.
     - You're used to it. Yet you can't help but cry.
@@ -9940,7 +9938,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 100
   m_WholeNumbers: 1
-  m_Value: 50
+  m_Value: 60
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -17773,8 +17771,8 @@ MonoBehaviour:
     - It was fun, but it hurts.
     - You're not tired yet, though. You did have an unexpected nap during the day
       after all.
-    - Maybe there's something else you can try and do to prolong being alone with
-      your own thoughts for just a little bit longer.
+    - Maybe there's something else you can try and do to delay being alone with your
+      own thoughts for just a little bit longer.
     code: 0200000006000000000000000000000000000000000000000000000002000000000000000a000000
   isChat: 0
 --- !u!1 &1567540321

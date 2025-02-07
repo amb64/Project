@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI resultEffects;
 
     // Stat variables
-    private int energy = 50;
+    private int energy = 60;
     private int stress = 50;
     private int anxiety = 50;
     private int depression = 50;
@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI endingText;
 
     // For showing stat changes at the end of the day
-    int startE = 50;
+    int startE = 60;
     int startS = 50;
     int startA = 50;
     int startD = 50;
@@ -442,16 +442,16 @@ public class GameManager : MonoBehaviour
                 break;
             case "Chat":
                 text = "Chat to your friends for a bit to relieve anxiety and depression.";
-                eff = "Anxiety: " + anxiety + " --> " + (anxiety - 10);
+                eff = "Anxiety: " + anxiety + " --> " + (anxiety - 15);
                 eff += "\n";
-                eff += "Depression: " + depression + " --> " + (depression - 10);
+                eff += "Depression: " + depression + " --> " + (depression - 15);
                 //cost = "Energy: " + energy + " --> " + (energy - 15);
                 cost = "Costs 15 Energy";
                 activityCost = 15;
                 break;
             case "Work":
                 text = "Spend some time getting work done to relive lots of stress. Chance for a bonus effect on depression or anxiety.";
-                eff = "Stress: " + stress + " --> " + (stress - 15);
+                eff = "Stress: " + stress + " --> " + (stress - 20);
                 eff += "\n";
                 eff += "Bonus -5 to depression OR anxiety";
                 //cost = "Energy: " + energy + " --> " + (energy - 15);
@@ -460,7 +460,7 @@ public class GameManager : MonoBehaviour
                 break;
             case "Game":
                 text = "Spend time playing games to relieve stress. Chance for a bonus effect on depression or anxiety.";
-                eff = "Stress: " + stress + " --> " + (stress - 10);
+                eff = "Stress: " + stress + " --> " + (stress - 15);
                 eff += "\n";
                 eff += "Bonus -5 to depression OR anxiety";
                 //cost = "Energy: " + energy + " --> " + (energy - 10);
@@ -469,7 +469,7 @@ public class GameManager : MonoBehaviour
                 break;
             case "SNS":
                 text = "Browse social media posts for a while to decrease depression. Chance for a bonus effect on stress or anxiety.";
-                eff = "Depression: " + depression + " --> " + (depression - 10);
+                eff = "Depression: " + depression + " --> " + (depression - 15);
                 eff += "\n";
                 eff += "Bonus -5 to stress OR anxiety";
                 //cost = "Energy: " + energy + " --> " + (energy - 10);
@@ -478,7 +478,7 @@ public class GameManager : MonoBehaviour
                 break;
             case "Video":
                 text = "Watch some videos online to decrease anxiety. Chance for a bonus effect on stress or depression.";
-                eff = "Anxiety: " + anxiety + " --> " + (anxiety - 10);
+                eff = "Anxiety: " + anxiety + " --> " + (anxiety - 15);
                 eff += "\n";
                 eff += "Bonus -5 to stress OR depression";
                 //cost = "Energy: " + energy + " --> " + (energy - 10);
@@ -487,12 +487,12 @@ public class GameManager : MonoBehaviour
                 break;
             case "Music":
                 text = "Listen to some music for a while to decrease anxiety and depression a bit.";
-                eff = "Anxiety: " + anxiety + " --> " + (anxiety - 5);
+                eff = "Anxiety: " + anxiety + " --> " + (anxiety - 10);
                 eff += "\n";
-                eff += "Depression: " + depression + " --> " + (depression - 5);
+                eff += "Depression: " + depression + " --> " + (depression - 10);
                 //cost = "Energy: " + energy + " --> " + (energy - 5);
-                cost = "Costs 5 Energy";
-                activityCost = 5;
+                cost = "Costs 10 Energy";
+                activityCost = 10;
                 break;
         }
 
@@ -532,7 +532,7 @@ public class GameManager : MonoBehaviour
         switch(selectedActivity)
         {
             case "Eat":
-                energy += 10;
+                energy += 15;
                 desc = "You eat a meal to recover your energy. ";
                 switch(random2)
                 {
@@ -553,7 +553,7 @@ public class GameManager : MonoBehaviour
                 }
                 break;
             case "Sleep":
-                energy+= 15;
+                energy+= 20;
                 desc = "You take a nap to recover your energy. ";
                 switch(random1)
                 {
@@ -579,12 +579,12 @@ public class GameManager : MonoBehaviour
                 }
                 break;
             case "Chat":
-                anxiety -= 10;
-                depression -= 10;
+                anxiety -= 15;
+                depression -= 15;
                 desc = "You spend some time talking to your friends. Having so much fun with them helps you forget about your troubles for a little while, relieving some of your depressive thoughts and anxieties. ";
                 break;
             case "Work":
-                stress -= 15;
+                stress -= 20;
                 desc = "You try to focus on working on your project for a while. ";
                 switch(random3)
                 {
@@ -600,7 +600,7 @@ public class GameManager : MonoBehaviour
                 }
                 break;
             case "Game":
-                stress -= 10;
+                stress -= 15;
                 desc = "You spend some time relaxing by playing one of your favourite video games. ";
                 switch(random3)
                 {
@@ -616,7 +616,7 @@ public class GameManager : MonoBehaviour
                 }
                 break;
             case "SNS":
-                depression -= 10;
+                depression -= 15;
                 desc = "You spend a while sitting in bed scrolling through social media on your phone to relieve your worries. ";
                 switch(random3)
                 {
@@ -632,7 +632,7 @@ public class GameManager : MonoBehaviour
                 }
                 break;
             case "Video":
-                anxiety -= 10;
+                anxiety -= 15;
                 desc = "You spend a few hours watching videos online to relax. ";
                 switch(random3)
                 {
@@ -648,8 +648,8 @@ public class GameManager : MonoBehaviour
                 }
                 break;
             case "Music":
-                anxiety -= 5;
-                depression -= 5;
+                anxiety -= 10;
+                depression -= 10;
                 desc = "You listen to some of your favourite songs for a while, calming you down. ";
                 break;
         }
@@ -801,7 +801,7 @@ public class GameManager : MonoBehaviour
         if(anxiety >= 60)
         {
             anxietyImage.color = new Color32(255, 149, 149, 255);
-            //Debug.Log("we should be anxious...");
+            Debug.Log("we should be anxious...");
             audioManager.Heartbeat();
         }
         else
