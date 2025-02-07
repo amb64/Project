@@ -69,6 +69,7 @@ public class GameManager : MonoBehaviour
     public GameObject freeTimePopup;
     bool popupActive = true;
     public AudioManager audioManager;
+    bool end = false;
 
     // Ending variables
     // Good ending = 1, bad ending = 2
@@ -136,24 +137,27 @@ public class GameManager : MonoBehaviour
                 timeslotPopup.SetActive(false);
                 endingTransScreen.SetActive(false);
                 popupActive = false;
+            }
+        }
 
-                switch(ending)
-                {
-                    case 0:
-                        break;
-                    case 1:
-                        // Good ending screen
-                        gameScreen.SetActive(false);
-                        goodEndScreen.SetActive(true);
-                        audioManager.Button();
-                        break;
-                    case 2:
-                        // Bad ending screen
-                        gameScreen.SetActive(false);
-                        badEndScreen.SetActive(true);
-                        audioManager.Button();
-                        break;
-                }
+        if(manager.fin && end)
+        {
+            switch(ending)
+            {
+            case 0:
+                break;
+            case 1:
+                // Good ending screen
+                gameScreen.SetActive(false);
+                goodEndScreen.SetActive(true);
+                end = false;
+                break;
+            case 2:
+                // Bad ending screen
+                gameScreen.SetActive(false);
+                badEndScreen.SetActive(true);
+                end = false;
+                break;
             }
         }
         
@@ -238,10 +242,9 @@ public class GameManager : MonoBehaviour
                 // Trigger the ending screen.
                 if(manager.fin && manager.chatFin)
                 {
-
                     endingTransScreen.SetActive(true);
-                    gameScreen.SetActive(false);
-                    endingText.text = "Day " + day;
+                    //gameScreen.SetActive(false);
+                    endingText.text = "Day 4";
                     popupActive = true;
                     EndGame();
                 }
@@ -772,7 +775,7 @@ public class GameManager : MonoBehaviour
         stressSlider.value = stress;
         stressText.text = stress.ToString();
 
-        if(stress >= 75)
+        if(stress >= 60)
         {
             stressImage.color = new Color32(255, 149, 149, 255);
             stressLines.SetActive(true);
@@ -795,7 +798,7 @@ public class GameManager : MonoBehaviour
         anxietySlider.value = anxiety;
         anxietyText.text = anxiety.ToString();
 
-        if(anxiety >= 75)
+        if(anxiety >= 60)
         {
             anxietyImage.color = new Color32(255, 149, 149, 255);
             //Debug.Log("we should be anxious...");
@@ -819,7 +822,7 @@ public class GameManager : MonoBehaviour
         depressionSlider.value = depression;
         depressionText.text = depression.ToString();
 
-        if(depression >= 75)
+        if(depression >= 60)
         {
             depressionImage.color = new Color32(255, 149, 149, 255);
             audioManager.Distort();
@@ -913,6 +916,8 @@ public class GameManager : MonoBehaviour
         eventName = trigger.gameObject.name;
         trigger.TriggerDialogue();
         Debug.Log("Triggering ending sequence. Trigger object is: " + eventName);
+
+        end = true;
 
 
         // Trigger the end END screen that gives further information about MI and support resources
