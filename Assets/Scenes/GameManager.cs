@@ -9,6 +9,8 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
+using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 //using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
@@ -467,7 +469,7 @@ public class GameManager : MonoBehaviour
                 cost = "Costs 10 Energy";
                 activityCost = 10;
                 break;
-            case "SNS":
+            case "Social Media":
                 text = "Browse social media posts for a while to decrease depression. Chance for a bonus effect on stress or anxiety.";
                 eff = "Depression: " + depression + " --> " + (depression - 15);
                 eff += "\n";
@@ -615,7 +617,7 @@ public class GameManager : MonoBehaviour
                         break;
                 }
                 break;
-            case "SNS":
+            case "Social Media":
                 depression -= 15;
                 desc = "You spend a while sitting in bed scrolling through social media on your phone to relieve your worries. ";
                 switch(random3)
@@ -924,5 +926,10 @@ public class GameManager : MonoBehaviour
 
         // Final screen to urge the player to return to the research questionnaire.
 
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(0);
     }
 }
