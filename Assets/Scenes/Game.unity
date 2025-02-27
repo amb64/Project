@@ -12557,6 +12557,9 @@ MonoBehaviour:
   fullBody: {fileID: 1307729595}
   closeUp: {fileID: 200950283}
   stressLines: {fileID: 1928174058}
+  roomImage: {fileID: 1546327527}
+  dayImage: {fileID: 21300000, guid: 1cbad21e034677c4c8e047108927ae3f, type: 3}
+  nightImage: {fileID: 21300000, guid: a1ec2bd4852a631479f652ad71e130ea, type: 3}
 --- !u!4 &1004850907
 Transform:
   m_ObjectHideFlags: 0

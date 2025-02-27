@@ -101,6 +101,9 @@ public class GameManager : MonoBehaviour
     public GameObject fullBody;
     public GameObject closeUp;
     public GameObject stressLines;
+    public GameObject roomImage;
+    public Sprite dayImage;
+    public Sprite nightImage;
 
 
 
@@ -299,6 +302,18 @@ public class GameManager : MonoBehaviour
             if(!manager.doesntNeedPopup)
             {
                 PopupWindow(timeslotPopup, true);
+            }
+
+            // Swap image for the room
+            if(eventName.Contains("Night") || eventName.Contains("Evening") || eventName.Contains("Late night"))
+            {
+                roomImage.GetComponent<Image>().sprite = nightImage;
+                Debug.Log("Night room screen");
+            }
+            else
+            {
+                roomImage.GetComponent<Image>().sprite = dayImage;
+                Debug.Log("Day room screen");
             }
 
         }
@@ -918,6 +933,8 @@ public class GameManager : MonoBehaviour
         eventName = trigger.gameObject.name;
         trigger.TriggerDialogue();
         Debug.Log("Triggering ending sequence. Trigger object is: " + eventName);
+
+        roomImage.GetComponent<Image>().sprite = dayImage;
 
         end = true;
 
