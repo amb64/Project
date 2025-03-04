@@ -14,6 +14,7 @@ public class AudioManager : MonoBehaviour
 
     public void StartAudio()
     {
+        // Start playing and then stop the music so that we can unpause it later depending on stats
         bgMusic.loop = true;
         bgMusicDistorted.loop = true;
         

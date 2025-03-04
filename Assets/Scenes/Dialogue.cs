@@ -13,8 +13,10 @@ public class Dialogue
     public int statToAffect;
     public int effectAmount;
 
+    // If true, this event is part of a sequence of events in the same timeslot, and therefore the "new timeslot" popup shouldnt appear
     public bool doesntNeedPopup;
 
+    // The dialogue text
     [TextArea(3,10)]
     public string[] sentences;
 

@@ -134,6 +134,7 @@ public class GameManager : MonoBehaviour
 
         //Debug.Log("ending " + ending);
 
+        // If there's a popup window on the screen / timeslot popup, let the user clikc to remove it
         if(popupActive)
         {
             if(Input.GetMouseButtonDown(0))
@@ -145,6 +146,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        // Trigger the relevant screen after the ending event has finished
         if(manager.fin && end)
         {
             switch(ending)
@@ -166,6 +168,7 @@ public class GameManager : MonoBehaviour
             }
         }
         
+        // Dialogue codes
         switch(manager.code)
         {
             case 0:
@@ -267,6 +270,8 @@ public class GameManager : MonoBehaviour
 
         }
 
+        // If no dialogue is currenty playing, and we're not starting free time, as well as the game hasn't ended, then this is a sequence set of events in the same timeslot
+        // and free time should be skipped
         if(manager.fin && manager.chatFin && manager.code != 10 && ending == 0)
         {
             Debug.Log("Skipping free time.");
@@ -279,12 +284,13 @@ public class GameManager : MonoBehaviour
 
     void NextEvent()
     {
-        //Debug.Log("banana style");
 
         // Get the next event trigger and trigger it
         try
         {   
             //current_event = events[31];
+
+            // Get the current event from the list and trigger it
             current_event = events[timeslot];
             trigger = current_event.GetComponent<DialogueTrigger>();
             eventName = trigger.gameObject.name;
@@ -299,6 +305,7 @@ public class GameManager : MonoBehaviour
 
             trigger.TriggerDialogue();
 
+            // Activate the timeslot popup if needed
             if(!manager.doesntNeedPopup)
             {
                 PopupWindow(timeslotPopup, true);
@@ -317,6 +324,7 @@ public class GameManager : MonoBehaviour
             }
 
         }
+        // If we run out of events to play, the game is over so calculate the ending and trigger it
         catch(ArgumentOutOfRangeException)
         {
             if(manager.fin && manager.chatFin)
@@ -329,6 +337,7 @@ public class GameManager : MonoBehaviour
 
     void PopupWindow(GameObject window, bool needUpdate)
     {
+        // Change the popup timeslot window text
         window.SetActive(true);
         if(needUpdate)
         {
@@ -345,6 +354,7 @@ public class GameManager : MonoBehaviour
         // This may be redundant however
         manager.code = 0;
 
+        // Activate the transition screen
         dayTransition.SetActive(true);
 
         transitionText.text = "Day " + day;
@@ -439,6 +449,7 @@ public class GameManager : MonoBehaviour
         string eff = "Error: Unable to detect activity.";
         string cost = "Error: Unable to detect activity";
 
+        // Set the text for the info window about each activity.
         switch(selectedActivity)
         {
             case "Eat":
@@ -546,6 +557,7 @@ public class GameManager : MonoBehaviour
         int random2 = UnityEngine.Random.Range(0,2);
         int random3 = UnityEngine.Random.Range(0,1);
 
+        // Affect the stats, as well as add some flavour text depending on the random stuff
         switch(selectedActivity)
         {
             case "Eat":
@@ -756,6 +768,7 @@ public class GameManager : MonoBehaviour
     {
         // Clamp all the stats to between 0 and 100
         // As well as make the sliders red / white depending on their values
+        // And also triggers any stat-related effects like heartbeats etc.
 
         audioManager.Notif();
 
@@ -899,8 +912,6 @@ public class GameManager : MonoBehaviour
         // Logic for determining which ending will go here
         // Based on adding the stats together and whether you surpass a certain "stat value" or not
 
-        // !!!!Needs balancing, as this doesnt take into account individual stats. Please test thoroughly.!!!!
-
         int statValue = 0;
 
         statValue += stress;
@@ -929,11 +940,13 @@ public class GameManager : MonoBehaviour
             ending = 2;
         }
 
+        // Trigger the dialogue for the relevant event
         trigger = endType.GetComponent<DialogueTrigger>();
         eventName = trigger.gameObject.name;
         trigger.TriggerDialogue();
         Debug.Log("Triggering ending sequence. Trigger object is: " + eventName);
 
+        // Set the image for the room to day
         roomImage.GetComponent<Image>().sprite = dayImage;
 
         end = true;
@@ -947,6 +960,7 @@ public class GameManager : MonoBehaviour
 
     public void Restart()
     {
+        // Just reloads the scene which restarts the whole game
         SceneManager.LoadScene(0);
     }
 }
