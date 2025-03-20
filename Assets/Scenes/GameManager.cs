@@ -923,11 +923,7 @@ public class GameManager : MonoBehaviour
 
         // Trigger the relevant ending event
 
-        // Could use a list here if there would be multiple events in the ending. Wouldn't be hard to code.
-        // Just replace the current events list with the list for the ending events here
-        // And use the regular flow that the game uses to continue calling events until it runs out
-        // Then use a code to trigger the ending screen rather than the next event.
-        if(statValue <= 97)
+        if(statValue <= 98)
         {
             //The good ending
             endType = goodEndEvent;
