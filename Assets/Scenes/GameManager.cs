@@ -469,7 +469,7 @@ public class GameManager : MonoBehaviour
                 activityCost = 0;
                 break;
             case "Chat":
-                text = "Chat to your friends for a bit to relieve anxiety and depression.";
+                text = "Chat to your friends for a bit to relieve anxiety and depression. If stress is high, you will receive a smaller bonus.";
                 eff = "Anxiety: " + anxiety + " --> " + (anxiety - 15);
                 eff += "\n";
                 eff += "Depression: " + depression + " --> " + (depression - 15);
@@ -514,7 +514,7 @@ public class GameManager : MonoBehaviour
                 activityCost = 10;
                 break;
             case "Music":
-                text = "Listen to some music for a while to decrease anxiety and depression a bit.";
+                text = "Listen to some music for a while to decrease anxiety and depression a bit. If stress is high, you will receive a smaller bonus.";
                 eff = "Anxiety: " + anxiety + " --> " + (anxiety - 10);
                 eff += "\n";
                 eff += "Depression: " + depression + " --> " + (depression - 10);
@@ -522,13 +522,25 @@ public class GameManager : MonoBehaviour
                 cost = "Costs 10 Energy";
                 activityCost = 10;
                 break;
+            case "Exercise":
+                text = "Spend some time moving your body to greatly decrease depression. If anxiety is high, you will receive a smaller bonus.";
+                eff = "Depression: " + depression + " --> " + (depression - 30);
+                cost = "Costs 25 Energy";
+                activityCost = 25;
+                break;
+            case "Walk":
+                text = "Go outside on a short walk to greatly decrease anxiety. If depression is high, you will receive a smaller bonus.";
+                eff = "Anxiety: " + anxiety + " --> " + (anxiety - 30);
+                cost = "Costs 25 Energy";
+                activityCost = 25;
+                break;
         }
 
         descriptionText.text = text;
         effectsText.text = eff;
         costText.text = cost;
 
-        //Debug.Log("Button name: " + buttonName);
+        Debug.Log("Button name: " + button.name);
     }
 
     public void SpendTime()
@@ -608,8 +620,16 @@ public class GameManager : MonoBehaviour
                 }
                 break;
             case "Chat":
-                anxiety -= 15;
-                depression -= 15;
+            if(stress >= 60)
+                {
+                    anxiety -= 10;
+                    depression -= 10;
+                }
+            else
+                {
+                    anxiety -= 15;
+                    depression -= 15;
+                }
                 desc = "You spend some time talking to your friends. Having so much fun with them helps you forget about your troubles for a little while, relieving some of your depressive thoughts and anxieties. ";
                 break;
             case "Work":
@@ -677,9 +697,39 @@ public class GameManager : MonoBehaviour
                 }
                 break;
             case "Music":
-                anxiety -= 10;
-                depression -= 10;
+            if(stress >= 60)
+                {
+                    anxiety -= 7;
+                    depression -= 7;
+                }
+            else
+                {
+                    anxiety -= 10;
+                    depression -= 10;
+                }
                 desc = "You listen to some of your favourite songs for a while, calming you down. ";
+                break;
+            case "Exercise":
+            if(anxiety >= 60)
+                {
+                    depression -= 25;
+                }
+            else
+                {
+                    depression -= 30;
+                }
+                desc = "You move your body for some time until your heart is pumping and you feel exhausted. You feel less depressed. ";
+                break;
+            case "Walk":
+            if (depression >= 60)
+                {
+                    anxiety -= 25;
+                }
+            else
+                {
+                    anxiety -= 30;
+                }
+                desc = "You push yourself to go on a walk outside. It's tough, and you feel exhausted afterwards, but some weight has been lifted off of your shoulders. ";
                 break;
         }
 
