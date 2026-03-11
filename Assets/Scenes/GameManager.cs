@@ -12,6 +12,7 @@ using UnityEngine.UI;
 //using UnityEditor.SceneManagement;
 using UnityEngine.SceneManagement;
 //using UnityEngine.UIElements;
+using GameAnalyticsSDK;
 
 public class GameManager : MonoBehaviour
 {
@@ -106,10 +107,12 @@ public class GameManager : MonoBehaviour
     public Sprite nightImage;
 
 
-
     // Start is called before the first frame update
     void Start()
     {
+        // Initialise game analytics
+        GameAnalytics.Initialize();
+
         // Get the dialogue manager
         manager = FindObjectOfType<DialogueManager>();
 
@@ -978,13 +981,25 @@ public class GameManager : MonoBehaviour
             //The good ending
             endType = goodEndEvent;
             ending = 1;
+
+            // Set analytic
+            GameAnalytics.NewProgressionEvent(GAProgressionStatus.Complete, "ending", "good");
         }
         else
         {
             //The bad ending
             endType = badEndEvent;
             ending = 2;
+
+            // Set analytic
+            GameAnalytics.NewProgressionEvent(GAProgressionStatus.Complete, "ending", "bad");
         }
+
+        // Set analytics for game stats
+        GameAnalytics.NewDesignEvent("stat_energy", energy);
+        GameAnalytics.NewDesignEvent("stat_depression", depression);
+        GameAnalytics.NewDesignEvent("stat_anxiety", anxiety);
+        GameAnalytics.NewDesignEvent("stat_stress", stress);
 
         // Trigger the dialogue for the relevant event
         trigger = endType.GetComponent<DialogueTrigger>();
@@ -1007,6 +1022,7 @@ public class GameManager : MonoBehaviour
     public void Restart()
     {
         // Just reloads the scene which restarts the whole game
+        GameAnalytics.NewDesignEvent("game:replay");
         SceneManager.LoadScene(0);
     }
 }
